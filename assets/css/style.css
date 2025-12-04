@@ -659,14 +659,3 @@ footer { background: #001a38; color: #aab6c4; padding-top: 60px; margin-top: 0; 
         padding: 8px 0;
     }
 }
-/* AJOUT AU CSS: Style du Logo Image */
-.logo-img {
-    height: 40px; /* Ajustez cette hauteur selon la taille du logo */
-    width: auto;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-.logo {
-    display: flex; /* Assure l'alignement de l'image et du texte */
-    align-items: center;
-}
