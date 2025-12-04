@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Portal Login</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+
+    <main class="portal-main">
+        <div class="portal-box">
+            
+            <a href="../index.html" class="btn btn-secondary btn-small" aria-label="Retour à la page d'accueil">
+                <i class="fas fa-arrow-left"></i> Back to home
+            </a>
+            
+            <a href="../index.html" class="logo" style="margin-bottom: 20px; display: inline-block;" aria-label="Faculty of Technology Home">
+                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            </a>
+            
+            <div class="portal-header">
+                <i class="fas fa-user-graduate fa-3x" style="color: var(--primary); margin-bottom: 10px;"></i>
+                <h2>Student Portal Login</h2>
+            </div>
+            
+            <form class="portal-form" action="backend/login.php" method="POST">
+                <div class="form-group">
+                    <label for="matricule">Matricule / ID</label>
+                    <input type="text" id="matricule" name="matricule" required placeholder="Enter your ID">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                
+                <div class="form-links">
+                    <a href="register.html">Create an Account</a> | 
+                    <a href="forgot_password.html">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+/* === VARIABLES & RESET === */
+:root {
+    --primary: #002D62; /* UMBB Deep Blue */
+    --secondary: #0056b3; /* Lighter Blue */
+    --accent: #E6B800; /* Gold for excellence */
+    --text-dark: #1a1a1a;
+    --text-gray: #666;
+    --bg-light: #f8f9fa; /* The light background color of your Readdy page */
+    --content-bg: #ffffff; /* Pure white for content cards */
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* === NAVIGATION === */
+.navbar { background: var(--white); height: 70px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.navbar .container { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+.logo .highlight { color: var(--secondary); }
+
+.nav-menu { display: flex; gap: 25px; align-items: center; }
+.nav-link { font-weight: 500; font-size: 0.95rem; color: var(--text-dark); }
+.nav-link:hover { color: var(--secondary); }
+.btn-primary { background: var(--primary); color: var(--white); padding: 8px 20px; border-radius: 4px; border: none; cursor: pointer; }
+.btn-primary:hover { background: var(--secondary); }
+.btn-secondary { background: var(--accent); color: var(--primary); padding: 8px 15px; border-radius: 4px; border: none; font-weight: 600; display: inline-block; }
+.btn-secondary:hover { background: #d6a800; }
+
+/* Dropdown */
+.dropdown { position: relative; }
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); min-width: 250px; box-shadow: var(--shadow); border-radius: 4px; padding: 10px 0; z-index: 1001;}
+.dropdown-content li a { display: block; padding: 10px 20px; font-size: 0.9rem; }
+.dropdown-content li a:hover { background: var(--bg-light); color: var(--primary); }
+.dropdown:hover .dropdown-content { display: block; }
+/* keyboard accessibility: open when focused */
+.dropdown:focus-within .dropdown-content { display: block; }
+
+/* === GENERAL SECTIONS === */
+.hidden { display: none; }
+.active { display: block; animation: fadeIn 0.5s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* === HOME HERO === */
+.hero { height: 80vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0, 45, 98, 0.75); }
+.hero-content { position: relative; z-index: 2; max-width: 700px; padding: 20px; }
+.badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+.hero h1 { font-size: 3.5rem; margin: 20px 0; line-height: 1.2; font-weight: 700; }
+.hero p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+
+/* --- Quick Features Grid (New Home Section) --- */
+#quick-features {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.quick-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--content-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-top: 5px solid var(--primary); /* Blue accent line */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 45, 98, 0.15);
+    background: #fcfcfc;
+}
+
+.feature-card i {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+/* --- Stats Section (New Home Section) --- */
+.stats-bg {
+    background: var(--primary); /* Deep blue background */
+    padding: 60px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    position: relative;
+}
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* === DEPARTMENT BODY & CONTENT CARDS (Screenshot Match) === */
+.department-body {
+    padding-top: 80px; 
+    padding-bottom: 80px;
+    background: var(--bg-light);
+}
+
+.content-card {
+    background: var(--content-bg);
+    padding: 30px 40px; 
+    margin-bottom: 30px; 
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.content-card h2 {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-weight: 600; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 15px;
+}
+
+.content-card p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* --- Academic Programs Grid --- */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.program-card h3 {
+    transition: color 0.3s ease-in-out;
+}
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 45, 98, 0.15);
+    border-color: var(--primary);
+}
+.program-card:hover h3 {
+    color: var(--secondary);
+}
+
+.program-card p {
+    font-size: 0.95rem; 
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+.duration-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- Research Areas Tags (Interactive) --- */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.research-tag {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--primary); 
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Pseudo-element for fill effect */
+.research-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary);
+    transform: scaleX(0); /* Start hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+    z-index: -1;
+    opacity: 0.1; /* Light transparent fill */
+}
+
+.research-tag:hover::before {
+    transform: scaleX(1); /* Fill on hover */
+}
+
+.research-tag i {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-right: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.research-tag:hover i {
+    color: var(--primary); 
+    transform: scale(1.1);
+}
+
+/* --- Laboratories List --- */
+.lab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+}
+
+.lab-grid > div {
+    border-left: 3px solid var(--accent); 
+    padding-left: 15px;
+}
+
+.lab-grid h3 {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.lab-grid p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+/* --- Faculty Members (Interactive) --- */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    gap: 20px;
+}
+
+.faculty-member {
+    padding: 15px;
+    transition: background 0.3s;
+}
+
+.faculty-member i {
+    color: #ccc; 
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.faculty-member:hover i {
+    color: var(--accent); 
+    transform: scale(1.1); 
+}
+
+.faculty-member h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.faculty-member .title {
+    display: block;
+    font-size: 0.9rem;
+    color: #444; 
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.faculty-member .specialization {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+
+.hod-card {
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: none;
+    color: var(--text-dark);
+}
+.hod-card .hod-img { float: left; margin-right: 20px; color: var(--secondary); }
+.hod-info h4 { margin-top: 0; }
+.hod-info .signature {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-top: 10px;
+}
+.hod-card::after { content: ""; display: table; clear: both; }
+
+
+/* === CONTACT SECTION === */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.info-list {
+    margin-top: 20px;
+}
+
+.info-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list h3 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.info-list h3 i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.info-list p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.dept-form input,
+.dept-form textarea,
+.dept-form select { 
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: var(--bg-light);
+    font-size: 0.9rem;
+    margin-bottom: 15px; 
+    color: var(--text-dark);
+}
+
+.dept-form select {
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3e%3cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 18px auto;
+    cursor: pointer;
+}
+
+.btn-full { width: 100%; padding: 12px; }
+
+/* === PORTAL SECTION === */
+.portal-container { height: 80vh; display: flex; align-items: center; justify-content: center; background: #eef2f7; }
+.portal-box { background: var(--white); padding: 40px; width: 100%; max-width: 450px; border-radius: 10px; box-shadow: var(--shadow); text-align: center; }
+.portal-header { margin-bottom: 30px; color: var(--primary); }
+.form-group { text-align: left; margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
+.btn-block { width: 100%; padding: 12px; font-size: 1rem; }
+.form-links { display: flex; justify-content: center; margin-top: 15px; font-size: 0.85rem; color: var(--secondary); }
+
+/* === FOOTER === */
+footer { background: #001a38; color: #aab6c4; padding-top: 60px; margin-top: 0; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 40px; }
+.footer-grid h4 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
+.footer-grid ul li { margin-bottom: 10px; }
+.copyright { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 0.9rem; }
+.copyright a { color: var(--accent); }
+
+/* --- Footer Map Styling --- */
+.footer-map-col {
+    grid-column: span 1; 
+}
+
+.footer-map-container {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.footer-grid iframe {
+    /* Ensures the iframe is responsive within its container */
+    max-width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* hidden on desktop, shown on small screens via media query */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+.menu-toggle .hamburger {
+    width: 26px;
+    height: 2px;
+    background: var(--text-dark);
+    display: block;
+    position: relative;
+}
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 26px;
+    height: 2px;
+    background: var(--text-dark);
+    transition: transform 0.2s ease;
+}
+.menu-toggle .hamburger::before { top: -8px; }
+.menu-toggle .hamburger::after { top: 8px; }
+/* --- NOUVELLE CLASSE À AJOUTER POUR POSITIONNER LE BOUTON BACK TO HOME DANS LE PORTAIL --- */
+.home-btn-portal {
+    position: absolute;
+    top: 15px; /* Distance du haut du .portal-box */
+    right: 15px; /* Distance du côté droit du .portal-box */
+}
+/* --- MODIFICATION DE LA CLASSE EXISTANTE .portal-box --- */
+.portal-box { 
+    background: #fff; 
+    padding: 40px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    max-width: 400px; 
+    width: 100%; 
+    text-align: center; 
+    
+    /* ✅ CORRECTION ICI : Ajouter ces deux lignes */
+    position: relative; 
+    padding-top: 70px; /* Augmente l'espace pour le bouton */
+}
+  /* Styles spécifiques pour centrer le formulaire de connexion */
+        body { background-color: #f4f7f9; } 
+        .portal-main { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        .portal-box { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px; width: 100%; text-align: center; }
+        .portal-header h2 { margin-top: 5px; margin-bottom: 25px; color: var(--primary); }
+        .portal-form .form-group { text-align: left; margin-bottom: 20px; }
+        .portal-form label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; }
+        .portal-form input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .form-links { margin-top: 15px; font-size: 0.9em; }
+        .form-links a { color: var(--secondary); text-decoration: none; }
+        .form-links a:hover { color: var(--accent); }
+
+        /* ==================================== */
+/* 1. Spécifique aux liens actifs des sous-menus (Départements) */
+/* Utilisé pour mettre en évidence "Civil Engineering" dans le dropdown */
+/* ==================================== */
+.nav-menu .dropdown-content .active-dropdown {
+    background-color: var(--color-primary-light); /* Couleur d'arrière-plan claire */
+    color: var(--color-primary-dark); /* Texte plus foncé */
+    font-weight: bold;
+    border-left: 3px solid var(--color-accent); /* Accentuation visuelle */
+    padding-left: 15px; /* Décalage pour la bordure */
+}
+
+/* ==================================== */
+/* 2. Style de la page (Entête et structure de grille) */
+/* ==================================== */
+
+/* Header de la page spécifique (section d'introduction) */
+.page-header {
+    background-color: #f0f4f7; /* Gris très clair */
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #0056b3; /* Bleu (couleur génie civil) */
+    border-radius: 4px;
+}
+
+.page-header h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* Grille du contenu principal et de la barre latérale */
+.content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 75% pour le contenu, 25% pour la sidebar */
+    gap: 30px;
+}
+
+/* Adapter pour les petits écrans */
+@media (max-width: 992px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Colonne unique sur mobile */
+    }
+}
+
+/* ==================================== */
+/* 3. Style de la barre latérale (Sidebar) */
+/* ==================================== */
+.sidebar-menu {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-menu h3 {
+    margin-top: 0;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.sidebar-menu a:hover {
+    color: #2980b9;
+    font-weight: 500;
+}
+
+.sidebar-menu i {
+    margin-right: 10px;
+    color: #0056b3;
+}
+
+/* ==================================== */
+/* 4. Style de la boîte d'appel à l'action (CTA Box) */
+/* ==================================== */
+.cta-box {
+    background-color: #eaf6ff; /* Bleu très clair pour un contraste doux */
+    border-left: 5px solid #0056b3;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 0 4px 4px 0;
+}
+
+.cta-box h4 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+/* Assurez-vous que .btn-secondary existe dans votre CSS global ou ajoutez-le ici */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2980b9; /* Bleu légèrement différent */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #1a5276;
+}
+
+/* === RESPONSIVE NAVIGATION === */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--white);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: var(--bg-light);
+        margin-top: 10px;
+        padding: 10px 20px;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content li a {
+        padding: 8px 0;
+    }
+}
+/* AJOUT AU CSS: Style du Logo Image */
+.logo-img {
+    height: 40px; /* Ajustez cette hauteur selon la taille du logo */
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.logo {
+    display: flex; /* Assure l'alignement de l'image et du texte */
+    align-items: center;
+}
