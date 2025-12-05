@@ -3,23 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exams Schedule and Regulations | Faculty of Technology</title>
+    <title>Exam Schedules | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique (style cohérent) */
+        .exams-hero {
+            /* Image de fond académique avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/exams-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .exams-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .exams-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Conteneur principal des Examens */
+        .exams-container {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+        }
+        .exams-container h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        /* Système d'onglets (Tabs) pour Session 1 / Session 2 */
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+        .tab-button {
+            padding: 15px 25px;
+            cursor: pointer;
+            background: #f0f4f7;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: var(--text-gray);
+            font-size: 1.1em;
+            transition: background 0.3s, color 0.3s;
+        }
+        .tab-button.active {
+            background: white;
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+        }
+        .tab-content {
+            padding: 20px 0;
+            /* Le contenu sera affiché/caché via JavaScript, mais par défaut, nous montrons le premier */
+        }
+        .tab-pane {
+            display: none;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Grille des départements (dans chaque onglet) */
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        /* Bloc de chaque département */
+        .department-block {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--primary);
+        }
+        .department-block h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Style des listes des examens */
+        .exams-list {
+            list-style: none;
+            padding: 0;
+        }
+        .exams-list li {
+            margin-bottom: 10px;
+        }
+        .exams-list li a {
+            display: block;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            transition: background 0.2s;
+            font-size: 0.95em;
+        }
+        .exams-list li a:hover {
+            background: #ffe6e6; /* Rouge très pâle pour l'accentuation des examens */
+            color: #d9534f;
+            border-color: #d9534f;
+        }
+        .exams-list li a i {
+            margin-right: 8px;
+            color: #d9534f; /* Couleur rouge pour le PDF/Alerte */
+        }
+        
+        /* Message d'alerte pour les étudiants */
+        .important-note {
+            background: #fcf8e3;
+            border: 1px solid #faebcc;
+            color: #8a6d3b;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .important-note i {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +169,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,155 +178,192 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="schooling.html" class="nav-link active">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="StudySchedule.html">Study Schedule</a></li>
                         <li><a href="TimeTable.html">Time Table</a></li>
-                        <li><a href="ScheduleOfExams.html" class="active">Exams Schedule</a></li>
+                        <li><a href="ScheduleOfExams.html" class="active-dropdown">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="exams-hero">
+        <div class="container">
+            <h1>Official Exam Schedules</h1>
+            <p>Access the definitive timetables for all final exams (Session 1 & Catch-up Session 2).</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>📋 Official Exams Schedule</h1>
-            <p>Important dates and procedures for mid-term, final, and catch-up examination sessions.</p>
-        </section>
-
-        <section class="section container content-grid">
+    <main class="container">
+        
+        <div class="exams-container">
+            <h2><i class="fas fa-exclamation-circle" style="color: var(--secondary);"></i> Academic Year 2025/2026 - Exam Periods</h2>
             
-            <div class="main-content-area">
-                
-                <h2>2024/2025 Examination Calendar</h2>
-                
-                <p>The dates below are provisional and subject to change by the university administration. Please check regularly for the finalized schedule (available 2-3 weeks before each session).</p>
+            <div class="important-note">
+                <i class="fas fa-bell"></i> **Reminder:** Examination locations (Amphi / Room number) are specified within the PDF documents. Punctuality is strictly enforced.
+            </div>
 
-                <div class="schedule-summary">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="session1"><i class="fas fa-calendar-day"></i> Session 1 Final Exams</button>
+                <button class="tab-button" data-tab="session2"><i class="fas fa-redo-alt"></i> Session 2 Catch-up Exams</button>
+            </div>
+
+            <div class="tab-content">
+                
+                <div id="session1" class="tab-pane active">
+                    <h3>Semester 1 & 2 Final Exams (Session 1)</h3>
+                    <p>Refer to the **Study Schedule** for general dates. Click on your department/level below to download the detailed schedule.</p>
                     
-                    <h3>Session 1: Semester 1 (Fall)</h3>
-                    <p>Covers all modules taught during the first semester.</p>
-                    <ul>
-                        <li>**Period:** January 5 - January 16, 2025 (Confirmed)</li>
-                        <li>**Results Posting:** Late January 2025 (Tentative)</li>
-                    </ul>
+                    <div class="department-grid">
+                        
+                        <div class="department-block" style="border-left-color: #5aa1a9;">
+                            <h3>CIVIL ENGINEERING</h3>
+                            <ul class="exams-list">
+                                <li><a href="../assets/docs/Exams_GC_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GC_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GC_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GC_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Exam Schedule</a></li>
+                            </ul>
+                        </div>
 
-                    <h3>Session 1: Semester 2 (Spring)</h3>
-                    <p>Covers all modules taught during the second semester.</p>
-                    <ul>
-                        <li>**Period:** May 25 - June 5, 2025 (Confirmed)</li>
-                        <li>**Results Posting:** Mid-June 2025 (Tentative)</li>
-                    </ul>
+                        <div class="department-block" style="border-left-color: #f7a049;">
+                            <h3>PROCESS ENGINEERING</h3>
+                            <ul class="exams-list">
+                                <li><a href="../assets/docs/Exams_GP_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GP_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GP_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GP_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Exam Schedule</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="department-block" style="border-left-color: #008cba;">
+                            <h3>MECHANICAL ENGINEERING</h3>
+                            <ul class="exams-list">
+                                <li><a href="../assets/docs/Exams_GM_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GM_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GM_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GM_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Exam Schedule</a></li>
+                            </ul>
+                        </div>
 
-                    <h3 style="color: var(--secondary-dark);">Session 2: Catch-Up (Rattrapage)</h3>
-                    <p>Mandatory for students who failed to validate one or more modules in Session 1.</p>
-                    <ul>
-                        <li>**Period:** June 22 - July 3, 2025 (Confirmed)</li>
-                        <li>**Final Deliberations:** Mid-July 2025</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-primary" style="margin-top: 20px;">Download Detailed Exams Timetable (PDF) <i class="fas fa-file-pdf"></i></a>
+                        <div class="department-block" style="border-left-color: #00a0e3;">
+                            <h3>ELECTRICAL SYSTEMS ENG.</h3>
+                            <ul class="exams-list">
+                                <li><a href="../assets/docs/Exams_GE_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GE_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GE_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Exam Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GE_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Exam Schedule</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
 
-                <h2 style="margin-top: 40px;">Examination Regulations</h2>
-                <p>Students must strictly adhere to the examination rules. Failure to comply may result in disciplinary action or module invalidation.</p>
-                <ul>
-                    <li>**Attendance:** Students must arrive 15 minutes before the start of the exam. Absence must be justified by an official medical certificate.</li>
-                    <li>**Identification:** A valid student card is mandatory for all exams.</li>
-                    <li>**Prohibited Items:** Use of mobile phones, smartwatches, and unauthorized documents is strictly forbidden.</li>
-                    <li>**Appeals:** Procedures for viewing exam papers and lodging appeals will be communicated with the results.</li>
-                </ul>
+                <div id="session2" class="tab-pane">
+                    <h3>Session 2 - Catch-up Exams (Rattrapage)</h3>
+                    <p>These schedules concern students who must retake modules from Semester 1 and/or Semester 2. Dates are usually in June/July.</p>
+                    
+                    <div class="department-grid">
+                        
+                         <div class="department-block" style="border-left-color: #5aa1a9;">
+                            <h3>ELECTRICAL SYSTEMS ENGINEERING (Ratt.)</h3>
+                            <ul class="exams-list">
+                                <li><a href="../assets/docs/Exams_GC_L2_S2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Catch-up Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GC_L3_S2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Catch-up Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GC_M1_S2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Catch-up Schedule</a></li>
+                            </ul>
+                        </div>
 
-                <a href="../contact/contact.html" class="btn btn-secondary" style="margin-top: 20px;">Contact Academic Administration for Clarification <i class="fas fa-question-circle"></i></a>
-                
+                        <div class="department-block" style="border-left-color: #f7a049;">
+                            <h3>PROCESS ENGINEERING (Ratt.)</h3>
+                            <ul class="exams-list">
+                                <li><a href="../assets/docs/Exams_GP_L2_S2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Catch-up Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GP_L3_S2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Catch-up Schedule</a></li>
+                                <li><a href="../assets/docs/Exams_GP_M1_S2.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Catch-up Schedule</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div style="grid-column: 1 / -1;" class="important-note">
+                            <i class="fas fa-calendar-day"></i> All LMD levels (L2, L3, M1, M2) will have their detailed **Session 2** schedules published here as soon as they are finalized by the Vice Dean's office.
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             
-            <aside class="sidebar-menu">
-                <h3>Schooling Links</h3>
-                <ul>
-                    <li><a href="StudySchedule.html"><i class="fas fa-book-open"></i> Study Schedule</a></li>
-                    <li><a href="TimeTable.html"><i class="fas fa-clock"></i> Time Table</a></li>
-                    <li><a href="ScheduleOfExams.html" class="active"><i class="fas fa-clipboard-list"></i> **Exams Schedule**</a></li>
-                    <li><hr></li>
-                    <li><a href="schooling.html"><i class="fas fa-graduation-cap"></i> Schooling Home</a></li>
-                </ul>
-                <div class="sidebar-contact-box">
-                    <h4>Results Access</h4>
-                    <p>Your individual results are posted exclusively on the student portal after deliberation.</p>
-                    <a href="../student_portal/login.html" class="btn btn-primary-small">Go to Student Portal</a>
-                </div>
-            </aside>
-            
-        </section>
+        </div>
+        
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const panes = document.querySelectorAll('.tab-pane');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Supprimer 'active' de tous les boutons et contenus
+                    tabs.forEach(t => t.classList.remove('active'));
+                    panes.forEach(p => p.classList.remove('active'));
+
+                    // Ajouter 'active' au bouton cliqué
+                    tab.classList.add('active');
+
+                    // Afficher le contenu correspondant
+                    const targetId = tab.getAttribute('data-tab');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

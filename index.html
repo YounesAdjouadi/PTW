@@ -3,150 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Faculty of Technology | UMBB</title>
+    <title>Faculty of Technology | University of Boumerdes</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour la page d'accueil */
+        .home-hero {
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('assets/img/hero-bg-home.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .home-hero h1 { 
+            color: white; 
+            font-size: 3.5rem; 
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .home-hero p { 
+            font-size: 1.4rem; 
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .hero-buttons a {
+            margin: 0 10px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        .hero-buttons .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .hero-buttons .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Styles pour la section News */
+        .news-section {
+            padding: 40px 0;
+            background-color: var(--bg-light);
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .news-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .news-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .news-card .date {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            display: block;
+        }
+        .news-card a {
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: auto; /* Pousse le lien vers le bas */
+        }
+        
+        /* Styles pour les Quick Access et Departments */
+        .grid-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        .small-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .access-card, .dept-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: background 0.3s;
+            text-decoration: none;
+            color: var(--text-dark);
+            border-top: 3px solid var(--primary);
+        }
+        .access-card:hover, .dept-card:hover {
+            background: var(--bg-light);
+            border-top-color: var(--accent);
+        }
+        .access-card h4, .dept-card h4 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .access-card h4 i, .dept-card h4 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="logo">
-            <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
-        </a>
-        
-        <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
-        <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link active">Home</a></li> 
-
-            <li class="dropdown">
-                <a href="about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="about/MissionAndVision.html">Mission & Vision</a></li>
-                    <li><a href="about/Deanswelcome.html">Dean's Welcome</a></li>
-                    <li><a href="about/FacultyPresentationChart.html">Faculty Presentation</a></li>
-                    <li><a href="about/Programs.html">Programs</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="departments/ProcessEngineeringDepartement.html">Process Engineering</a></li>
-                    <li><a href="departments/MechanicalEngineeringDepartement.html">Mechanical Eng.</a></li>
-                    <li><a href="departments/ElectricalSystemsEngineeringDepartement.html">Electrical Systems Eng.</a></li>
-                    <li><a href="departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="schooling/StudySchedule.html">Study Schedule</a></li>
-                    <li><a href="schooling/TimeTable.html">Time Table</a></li>
-                    <li><a href="schooling/ScheduleOfExams.html">Exams Schedule</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <a href="at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="at_home_learning/Elearning.html">E-learning</a></li>
-                    <li><a href="at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                    <li><a href="at_home_learning/AtHomeLearning.html">Distance Education</a></li>
-                </ul>
-            </li>
-
-            <li><a href="library/library.html" class="nav-link">Library</a></li>
-            <li><a href="contact/contact.html" class="nav-link">Contact</a></li>
-
-            <li>
-                <a href="student_portal/login.html" class="nav-link btn-primary">
-                    <i class="fas fa-user-graduate"></i> Student Portal
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-    <main id="main-content">
-        
-        <section id="home" class="page-section active">
-            <div class="hero">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <span class="badge">University of M'hamed Bougara Boumerdes</span>
-                    <h1>Faculty of Technology</h1>
-                    <p>Excellence in Engineering Education & Research</p>
-                    <div class="hero-buttons">
-                        <a href="departments/departments.html" class="btn btn-primary">Explore Departments</a>
-                    </div>
-                </div>
-            </div>
-
-            <section id="quick-features" class="section container">
-                <div class="quick-features-grid">
-                    <a href="about/about.html" class="feature-card">
-                        <i class="fas fa-microscope fa-3x"></i>
-                        <h3>Research & Labs</h3>
-                        <p>Discover our active research projects and facilities.</p>
-                    </a>
-                    
-                    <a href="student_portal/login.html" class="feature-card">
-                        <i class="fas fa-user-graduate fa-3x"></i>
-                        <h3>Student Portal</h3>
-                        <p>Access your academic records and online courses (ENT).</p>
-                    </a>
-                    
-                    <a href="library/library.html" class="feature-card">
-                        <i class="fas fa-book-reader fa-3x"></i>
-                        <h3>Digital Library</h3>
-                        <p>Access specialized technical literature and journals.</p>
-                    </a>
-                    
-                    <a href="contact/contact.html" class="feature-card">
-                        <i class="fas fa-headset fa-3x"></i>
-                        <h3>Contact Us</h3>
-                        <p>Find administrative contacts and location details.</p>
-                    </a>
-                </div>
-            </section>
-
-            <section id="stats-section" class="section stats-bg">
-                <div class="container stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">4500+</span>
-                        <p>Enrolled Students</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <p>Departments</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <p>Research Labs</p>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">80%</span>
-                        <p>Graduate Employment</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="news-events" class="section container">
-                <div class="content-card">
-                    <h2>Latest Faculty News & Events</h2>
-                    <p>Check the <a href="https://ft.univ-boumerdes.dz/" target="_blank">official website</a> for the latest updates on admissions and events.</p>
-                    <ul class="home-news-list">
-                        <li><i class="fas fa-bullhorn"></i> Important notice regarding student registration deadlines.</li>
-                        <li><i class="fas fa-calendar-alt"></i> Research seminar on Green Chemistry, next Tuesday at 10 AM.</li>
-                        <li><i class="fas fa-graduation-cap"></i> Thesis defenses schedule for Master's students published.</li>
-                        <li><i class="fas fa-chalkboard-user"></i> New training session announced for PLC programming.</li>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
+            </a>
+            <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="dropdown">
+                    <a href="about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="about/MissionAndVision.html">Mission & Vision</a></li>
+                        <li><a href="about/Deanswelcome.html">Dean's Welcome</a></li>
+                        <li><a href="about/FacultyPresentationChart.html">Faculty Presentation</a></li>
+                        <li><a href="about/Programs.html">Programs</a></li>
                     </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="departments/ProcessEngineeringDepartement.html">Process Engineering</a></li>
+                        <li><a href="departments/MechanicalEngineeringDepartement.html">Mechanical Eng.</a></li>
+                        <li><a href="departments/ElectricalSystemsEngineeringDepartement.html">Electrical Systems Eng.</a></li>
+                        <li><a href="departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="schooling/StudySchedule.html">Study Schedule</a></li>
+                        <li><a href="schooling/TimeTable.html">Time Table</a></li>
+                        <li><a href="schooling/ScheduleOfExams.html">Exams Schedule</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="at_home_learning/Elearning.html">E-learning</a></li>
+                        <li><a href="at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
+                    </ul>
+                </li>
+                <li><a href="library/library.html" class="nav-link">Library</a></li>
+                <li><a href="contact/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="home-hero">
+        <div class="container">
+            <h1>Faculty of Technology</h1>
+            <p>University of Boumerdes - Excellence in Engineering Education and Research</p>
+            <div class="hero-buttons">
+                <a href="about/Programs.html" class="btn-primary">Explore Programs</a>
+                <a href="contact/contact.html" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="news-section">
+        <div class="container">
+            <h2 class="grid-header" style="text-align: left; margin-bottom: 25px;">News & Announcements</h2>
+            <div class="news-grid">
+                
+                <div class="news-card">
+                    <h3>Organisation of elections for the renewal of the Disciplinary Board</h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> November 2025</span>
+                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </section>
-        </section>
+
+                <div class="news-card">
+                    <h3>The schedule for odd semesters</h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> Academic Year 2025</span>
+                    <a href="schooling/StudySchedule.html">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="news-card">
+                    <h3>Announcement of the 52nd session of the National University Commission</h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> May 2025</span>
+                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="news-card">
+                    <h3>Renewal of the Faculty Council</h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> October 2024</span>
+                    <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <main class="container" style="padding: 40px 0;">
+        
+        <h2 class="grid-header">Events & Activities</h2>
+        <div class="small-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+            
+            <a href="#" class="access-card" style="border-top-color: #f7a049;">
+                <h4><i class="fas fa-flask"></i> PRFU Research Grant 2025</h4>
+                <p>Check the deadlines and application process for research grants.</p>
+                <span style="color: #f7a049; font-weight: 500;">Learn more <i class="fas fa-chevron-right"></i></span>
+            </a>
+
+            <a href="#" class="access-card" style="border-top-color: #5aa1a9;">
+                <h4><i class="fas fa-chalkboard-teacher"></i> International Conference on Materials & Mechanics Technology</h4>
+                <p>Submit your abstracts for the upcoming international conference.</p>
+                <span style="color: #5aa1a9; font-weight: 500;">Learn more <i class="fas fa-chevron-right"></i></span>
+            </a>
+            
+        </div>
+        
+        <h2 class="grid-header">Quick Access</h2>
+        <div class="small-grid">
+            
+            <a href="#" class="access-card">
+                <h4><i class="fas fa-scroll"></i> Thesis Defenses</h4>
+                <p>Access thesis defense schedules and archives for all departments.</p>
+            </a>
+            
+            <a href="#" class="access-card">
+                <h4><i class="fas fa-calendar-check"></i> Conferences</h4>
+                <p>Upcoming scientific events, seminars, and international workshops.</p>
+            </a>
+
+            <a href="#" class="access-card">
+                <h4><i class="fas fa-project-diagram"></i> PRFU Projects</h4>
+                <p>Research funding and detailed information on ongoing PRFU projects.</p>
+            </a>
+            
+        </div>
+
+        <h2 class="grid-header">Our Departments</h2>
+        <div class="small-grid">
+            
+            <a href="departments/ProcessEngineeringDepartement.html" class="dept-card">
+                <h4><i class="fas fa-industry"></i> Process Engineering</h4>
+                <p>Chemical processes, industrial applications, and reactor design.</p>
+            </a>
+            
+            <a href="departments/MechanicalEngineeringDepartement.html" class="dept-card">
+                <h4><i class="fas fa-cogs"></i> Mechanical Engineering</h4>
+                <p>Design, manufacturing, thermal systems, and mechanical systems.</p>
+            </a>
+
+            <a href="departments/CivilEngineeringDepartement.html" class="dept-card">
+                <h4><i class="fas fa-hard-hat"></i> Civil Engineering</h4>
+                <p>Structural engineering, infrastructure, and construction management.</p>
+            </a>
+
+            <a href="departments/ElectricalSystemsEngineeringDepartement.html" class="dept-card">
+                <h4><i class="fas fa-bolt"></i> Electrical Systems</h4>
+                <p>Power systems, control, automation, and electrical engineering.</p>
+            </a>
+            
+        </div>
 
     </main>
 
@@ -163,10 +299,10 @@
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="library/library.html">Library</a></li>
-                        <li><a href="contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
 

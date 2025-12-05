@@ -3,23 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Time Table (Class Schedule) | Faculty of Technology</title>
+    <title>Course Timetables | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique (style cohérent) */
+        .timetable-hero {
+            /* Image de fond académique avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/timetable-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .timetable-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .timetable-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Conteneur principal des EDT */
+        .timetable-container {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+        }
+        .timetable-container h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        /* Grille des niveaux (L3, M1, M2...) */
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        /* Carte de chaque niveau */
+        .level-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        .level-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .level-card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        /* Liste des liens EDT par niveau/département */
+        .timetable-list {
+            list-style: none;
+            padding: 0;
+        }
+        .timetable-list li {
+            margin-bottom: 10px;
+        }
+        .timetable-list li a {
+            display: block;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            transition: background 0.2s;
+            font-size: 0.95em;
+        }
+        .timetable-list li a:hover {
+            background: #e0f2ff;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        .timetable-list li a i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+
+        /* Section d'alerte */
+        .alert-box {
+            background: #fff3cd; 
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ffeeba;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        .alert-box i {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +139,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,143 +148,222 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="schooling.html" class="nav-link active">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="StudySchedule.html">Study Schedule</a></li>
-                        <li><a href="TimeTable.html" class="active">Time Table</a></li>
+                        <li><a href="TimeTable.html" class="active-dropdown">Time Table</a></li>
                         <li><a href="ScheduleOfExams.html">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="timetable-hero">
+        <div class="container">
+            <h1>Course Timetables (Emplois du Temps)</h1>
+            <p>Access the official weekly schedules for lectures, tutorials (TD), and practical sessions (TP).</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>⏰ Official Time Table (Class Schedule)</h1>
-            <p>Access and download the detailed weekly schedules for all lectures (Cours), tutorials (TD), and practical sessions (TP).</p>
-        </section>
-
-        <section class="section container content-grid">
-            
-            <div class="main-content-area">
-                
-                <h2>Search and Download Your Schedule</h2>
-                
-                <p>The time table is organized by department, academic level (L1, L2, L3, M1, M2), and group. Please select your corresponding department below to find the files.</p>
-                
-                <div class="department-schedule-links">
-                    <a href="#" class="download-card">
-                        <i class="fas fa-hard-hat"></i>
-                        <h3>Civil Engineering</h3>
-                        <p>L1, L2 (Common Core) and specialized L3/Master schedules.</p>
-                        <span class="btn-link">Download Schedules <i class="fas fa-download"></i></span>
-                    </a>
-                    
-                    <a href="#" class="download-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Mechanical Engineering</h3>
-                        <p>All levels and specialty tracks schedules (Energy, Design, Materials).</p>
-                        <span class="btn-link">Download Schedules <i class="fas fa-download"></i></span>
-                    </a>
-                    
-                    <a href="#" class="download-card">
-                        <i class="fas fa-bolt"></i>
-                        <h3>Electrical Systems Engineering</h3>
-                        <p>Schedules for Electrical Power, Automation, and Electronics streams.</p>
-                        <span class="btn-link">Download Schedules <i class="fas fa-download"></i></span>
-                    </a>
-                    
-                    <a href="#" class="download-card">
-                        <i class="fas fa-flask"></i>
-                        <h3>Process Engineering</h3>
-                        <p>Schedules for all Process, Petroleum, and Environmental tracks.</p>
-                        <span class="btn-link">Download Schedules <i class="fas fa-download"></i></span>
-                    </a>
-                </div>
-
-                <div class="alert-box-info" style="margin-top: 40px;">
-                    <h4>⚠️ Important Notice: Updates</h4>
-                    <p>Schedules are subject to slight modifications, especially at the beginning of each semester. **Always consult the latest version displayed here.** For personalized schedules or group assignments, please refer to your Student Portal.</p>
-                </div>
-
-                <a href="../student_portal/login.html" class="btn btn-primary" style="margin-top: 20px;">Access Personalized Timetable (Student Portal) <i class="fas fa-user-graduate"></i></a>
-                
-            </div>
-            
-            <aside class="sidebar-menu">
-                <h3>Schooling Links</h3>
-                <ul>
-                    <li><a href="StudySchedule.html"><i class="fas fa-book-open"></i> Study Schedule</a></li>
-                    <li><a href="TimeTable.html" class="active"><i class="fas fa-clock"></i> **Time Table**</a></li>
-                    <li><a href="ScheduleOfExams.html"><i class="fas fa-clipboard-list"></i> Exams Schedule</a></li>
-                    <li><hr></li>
-                    <li><a href="schooling.html"><i class="fas fa-graduation-cap"></i> Schooling Home</a></li>
-                </ul>
-            </aside>
-            
-        </section>
-
+    <main class="container">
+        <div class="timetable-container" style="overflow-x:auto;">
+            <h2 style="text-align:center;"><span style="font-size:1.2em;font-weight:bold;">Planning prévisionnel des enseignements du <span style="background:yellow;">S1</span> de l’année Universitaire <span style="background:yellow;">2025/2026</span></span><br>
+            <span style="font-size:1em;">Faculté de Technologie - Université M’Hamed Bougara Boumerdes</span></h2>
+            <table style="border-collapse:collapse;width:100%;font-size:0.98em;">
+                <tr style="background:#ffe600;font-weight:bold;text-align:center;">
+                    <td rowspan="2">Mois</td>
+                    <td colspan="2">Sept</td>
+                    <td colspan="4">Oct</td>
+                    <td colspan="4">Nov</td>
+                    <td colspan="4">Dec</td>
+                    <td colspan="4">Jan</td>
+                    <td>Fev</td>
+                </tr>
+                <tr style="background:#ffe600;font-weight:bold;text-align:center;">
+                    <td>du 20 au 25</td>
+                    <td>du 27 au 02</td>
+                    <td>du 04 au 09</td>
+                    <td>du 11 au 16</td>
+                    <td>du 18 au 23</td>
+                    <td>du 25 au 30</td>
+                    <td>du 01 au 06</td>
+                    <td>du 08 au 13</td>
+                    <td>du 15 au 20</td>
+                    <td>du 22 au 27</td>
+                    <td>du 29 au 04</td>
+                    <td>du 06 au 11</td>
+                    <td>du 13 au 18</td>
+                    <td>du 20 au 25</td>
+                    <td>du 27 au 01</td>
+                    <td>du 03 au 08</td>
+                    <td>du 10 au 15</td>
+                    <td>du 17 au 22</td>
+                    <td>du 24 au 29</td>
+                    <td>du 31 au 05</td>
+                </tr>
+                <tr style="background:#f9f9f9;font-weight:bold;text-align:center;">
+                    <td>Semaines</td>
+                    <td colspan="20"></td>
+                </tr>
+                <tr style="background:#fffbe6;font-weight:bold;">
+                    <td>Master2<br>MCIL M2</td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP1</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP2</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP3</td>
+                    <td></td>
+                    <td>VH</td>
+                    <td></td>
+                    <td>Exa</td>
+                    <td>Exa</td>
+                    <td></td>
+                    <td>X</td>
+                    <td>Kat</td>
+                </tr>
+                <tr style="background:#ffe6fa;font-weight:bold;">
+                    <td><span style="font-style:italic;font-weight:bold;">Master1</span><br>MCIL M1</td>
+                    <td style="text-align:center;">X</td>
+                    <td style="text-align:center;">X</td>
+                    <td style="text-align:center;">X</td>
+                    <td style="text-align:center;">X</td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP1</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP2</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP3</td>
+                    <td></td>
+                    <td>VH</td>
+                    <td></td>
+                    <td>Exa</td>
+                    <td>Exa</td>
+                    <td></td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr style="background:#f6ffcc;font-weight:bold;">
+                    <td>Licence 3<br>MCIL 3<br>IE 3 ST</td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP1</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP2</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP3</td>
+                    <td></td>
+                    <td>VH</td>
+                    <td></td>
+                    <td>Exa</td>
+                    <td></td>
+                    <td>X</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="background:#fff6e6;font-weight:bold;">
+                    <td>Licence2<br>MCIL2<br>IE 2<sup>ème</sup> A<br>L2 C. Auto</td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP1</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP2</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP3</td>
+                    <td></td>
+                    <td>VH</td>
+                    <td></td>
+                    <td>Exa</td>
+                    <td>Exa</td>
+                    <td></td>
+                    <td>X</td>
+                    <td></td>
+                </tr>
+                <tr style="background:#e6faff;font-weight:bold;">
+                    <td>1F. 2025<br>1<sup>er</sup> année<br><span style="color:#0099cc;">GP,GM,GE,GC</span><br><span style="color:#0099cc;">MCIL Meca</span><br>Automat + L<br>Const Auto</td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP1</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP2</td>
+                    <td></td>
+                    <td style="text-align:center;">X</td>
+                    <td>CP3</td>
+                    <td></td>
+                    <td>VH</td>
+                    <td></td>
+                    <td>Exa</td>
+                    <td></td>
+                    <td>X</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -184,5 +372,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

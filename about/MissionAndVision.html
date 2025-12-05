@@ -4,32 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mission & Vision | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique (style cohérent) */
+        .mv-hero {
+            /* Image de fond avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/mission-vision-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .mv-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .mv-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Mise en page des sections principales (Mission et Vision) */
+        .section-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+        }
+        .section-card h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-card h2 i {
+            margin-right: 15px;
+            color: var(--accent);
+        }
+        
+        /* Style spécifique pour le bloc Mission */
+        .mission-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        /* Style pour le bloc Vision */
+        .vision-list {
+            list-style: none;
+            padding: 0;
+        }
+        .vision-list li {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+        }
+        .vision-list li i {
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.2em;
+            padding-top: 3px;
+        }
+        
+        /* Grille des valeurs fondamentales */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .value-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .value-item i {
+            font-size: 2.5em;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .value-item h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="about.html" class="nav-link active">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="MissionAndVision.html" class="active">Mission & Vision</a></li>
+                        <li><a href="MissionAndVision.html" class="active-dropdown">Mission & Vision</a></li>
                         <li><a href="Deanswelcome.html">Dean's Welcome</a></li>
                         <li><a href="FacultyPresentationChart.html">Faculty Presentation</a></li>
                         <li><a href="Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,7 +134,6 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -48,109 +142,118 @@
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="mv-hero">
+        <div class="container">
+            <h1>Mission, Vision & Values</h1>
+            <p>Our guiding principles defining the Faculty of Technology's commitment to education and research.</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>🎯 Mission & Vision</h1>
-            <p>Our core commitments and long-term aspirations for excellence in education and research.</p>
-        </section>
+    <main class="container">
         
-        <section class="section container content-grid">
+        <section class="section-card">
+            <h2 style="border-bottom-color: #f7a049;"><i class="fas fa-bullseye" style="color: #f7a049;"></i> Our Core Mission</h2>
             
-            <div class="main-content-area">
+            <div class="mission-text">
+                <p>The mission of the Faculty of Technology at UMBB is to be a leader in engineering education and scientific research. We are dedicated to:</p>
                 
-                <h2 style="color: var(--secondary);">Our Mission: To Educate, Innovate, and Serve</h2>
-                <p>The Faculty of Technology is committed to providing a high-quality educational experience that prepares students to become highly skilled, ethical, and innovative engineers and researchers. Our mission is centered on:</p>
-                <ul>
-                    <li>**Excellence in Pedagogy:** Delivering current and relevant curricula across all engineering disciplines.</li>
-                    <li>**Pioneering Research:** Conducting cutting-edge scientific research that contributes to sustainable technological development and solves complex industrial problems.</li>
-                    <li>**Societal Impact:** Serving the community and industry by promoting knowledge transfer and training professionals capable of leading national economic growth.</li>
+                <ul class="vision-list" style="border-left: none;">
+                    <li style="border-left-color: var(--accent);"><i class="fas fa-book-reader"></i> Providing high-quality academic programs that are continuously updated to align with national and international industry standards.</li>
+                    <li style="border-left-color: var(--accent);"><i class="fas fa-microscope"></i> Conducting impactful scientific research and technological development that addresses critical societal and industrial challenges in Algeria and beyond.</li>
+                    <li style="border-left-color: var(--accent);"><i class="fas fa-handshake"></i> Fostering a strong culture of collaboration and partnership with industry, governmental agencies, and international academic institutions.</li>
+                    <li style="border-left-color: var(--accent);"><i class="fas fa-users"></i> Developing ethically responsible and highly competent engineers capable of driving innovation and economic growth.</li>
                 </ul>
-
-                <h2 style="color: var(--secondary); margin-top: 30px;">Our Vision: Global Leadership in Technology</h2>
-                <p>Our long-term vision is to be recognized as a leading technological faculty in the Mediterranean region and beyond. We aim to achieve this by:</p>
-                <ol>
-                    <li>**Setting Standards:** Becoming the benchmark institution for engineering education quality in Algeria.</li>
-                    <li>**Expanding Influence:** Broadening our global research collaborations and industry partnerships.</li>
-                    <li>**Fostering Talent:** Creating an environment that attracts and develops world-class faculty and the brightest students.</li>
-                </ol>
-                
-                <a href="Deanswelcome.html" class="btn btn-primary" style="margin-top: 20px;">Read the Dean's Welcome Message <i class="fas fa-arrow-right"></i></a>
-                
             </div>
+        </section>
+
+        <section class="section-card">
+            <h2 style="border-bottom-color: var(--primary);"><i class="fas fa-eye" style="color: var(--primary);"></i> Our Strategic Vision</h2>
             
-            <aside class="sidebar-menu">
-                <h3>Explore the Faculty</h3>
-                <ul>
-                    <li><a href="MissionAndVision.html" class="active"><i class="fas fa-bullseye"></i> Mission & Vision</a></li>
-                    <li><a href="Deanswelcome.html"><i class="fas fa-user-tie"></i> Dean's Welcome</a></li>
-                    <li><a href="FacultyPresentationChart.html"><i class="fas fa-chart-bar"></i> Faculty Presentation Chart</a></li>
-                    <li><a href="Programs.html"><i class="fas fa-book"></i> Our Programs of Study</a></li>
-                </ul>
-            </aside>
+            <p>By 2030, the Faculty of Technology aims to achieve the following strategic goals:</p>
             
+            <ul class="vision-list">
+                <li><i class="fas fa-award"></i> Regional Recognition: To be recognized as the foremost Faculty of Technology in the Maghreb region for engineering education and applied research excellence.</li>
+                <li><i class="fas fa-globe-americas"></i> Global Impact: To significantly increase international collaboration, visibility, and the placement of our graduates in global enterprises.</li>
+                <li><i class="fas fa-flask"></i> Research Excellence: To establish dedicated research centers focused on emerging technologies (e.g., Renewable Energy, Smart Cities) that attract international funding and talent.</li>
+            </ul>
+        </section>
+
+        <section style="padding-bottom: 40px;">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 30px;">Fundamental Values</h2>
+            
+            <div class="values-grid">
+                
+                <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>Encouraging creativity, embracing new technologies, and promoting entrepreneurial spirit among students and faculty.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Integrity & Ethics</h3>
+                    <p>Upholding the highest standards of academic honesty, professional integrity, and ethical responsibility in all our activities.</p>
+                </div>
+
+                <div class="value-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Excellence</h3>
+                    <p>Striving for excellence in teaching, learning, and research, ensuring rigorous quality standards across all our programs.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Collaboration</h3>
+                    <p>Promoting teamwork, interdisciplinary engagement, and strong ties with industrial and academic partners worldwide.</p>
+                </div>
+
+            </div>
         </section>
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=Universit%C3%A9+de+Boumerd%C3%A8s+Facult%C3%A9+de+Technologie&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>

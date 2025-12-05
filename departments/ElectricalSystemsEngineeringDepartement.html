@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Electrical Systems Engineering Department | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour l'Électrique */
+        .dept-hero {
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/electrical-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .dept-hero h1 { color: white; font-size: 3rem; margin-bottom: 10px; }
+        .dept-hero p { font-size: 1.2rem; opacity: 0.9; }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +42,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="departments.html" class="nav-link active">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,153 +51,207 @@
                         <li><a href="CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../schooling/StudySchedule.html">Study Schedule</a></li>
                         <li><a href="../schooling/TimeTable.html">Time Table</a></li>
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
-                        <li><a href="../schooling/schooling.html">Schooling Overview</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="dept-hero">
+        <div class="container">
+            <h1>Electrical Systems Engineering</h1>
+            <p>Powering the Future: Automation, Telecommunications, and Smart Grids</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>💡 Electrical Systems Engineering Department (ISE)</h1>
-            <p>Pioneering the future of power, control, and intelligent electronic systems.</p>
-        </section>
-
-        <section class="section container content-grid">
+    <main class="container department-body">
+        <div class="content-grid">
             
             <div class="main-content-area">
                 
-                <h2>Mission and Expertise</h2>
-                
-                <p>The Electrical Systems Engineering (ISE) Department trains specialists in the fields of **Electrical Energy**, **Automation**, and **Applied Electronics**. Our mission is to provide cutting-edge education covering everything from the design of smart electrical grids to the programming of embedded industrial control systems.</p>
-                
-                <p>We prepare graduates for high-demand careers in renewable energy, telecommunications, manufacturing automation, and power distribution infrastructure.</p>
-
-                <div class="key-facts-box">
-                    <h4><i class="fas fa-bolt"></i> Core Focus Areas</h4>
-                    <ul>
-                        <li>**Electrical Power Systems:** Generation, transmission, and distribution optimization.</li>
-                        <li>**Industrial Automation & Control:** PLC programming, robotics, and process control.</li>
-                        <li>**Electronics & Embedded Systems:** Design of circuits and microcontrollers for smart devices.</li>
-                    </ul>
+                <div class="content-card">
+                    <h2>Department Overview</h2>
+                    <p>The Department of Electrical Systems Engineering at the Faculty of Technology is dedicated to excellence in education, research, and innovation in all aspects of electrical engineering. Our comprehensive programs cover power systems, electronics, telecommunications, automation, and renewable energy technologies, preparing students for diverse career opportunities in the rapidly evolving electrical engineering field.</p>
+                    <p>With state-of-the-art laboratories and experienced faculty members, we provide students with both theoretical knowledge and hands-on practical experience. Our curriculum is designed to meet industry demands and includes modern topics such as smart grids, IoT systems, 5G communications, and sustainable energy solutions.</p>
+                    <p>The department maintains strong partnerships with leading electrical companies, telecommunications providers, and energy utilities, offering students valuable internship opportunities and exposure to real-world engineering projects. Our research activities focus on cutting-edge areas including renewable energy integration, smart grid technologies, advanced control systems, and next-generation communication networks.</p>
                 </div>
 
-                <h3>Academic Programs</h3>
-                <p>Our programs are structured to offer deep specialization after a solid foundation in core electrical principles:</p>
-                
-                <div class="program-sections">
-                    <h4>1. Bachelor's (L3) - Common Core: Electrical Engineering</h4>
-                    <p>Covers fundamental concepts including circuit analysis, electromagnetic fields, electrical machines, and introductory programming.</p>
-                    
-                    <h4>2. Master's (M) Specializations (2 years)</h4>
-                    <ul>
-                        <li>**Master in Power Systems and Renewable Energy:** Focus on integrating solar, wind, and smart grid technologies.</li>
-                        <li>**Master in Industrial Automation and Computer Science:** Advanced control theories, distributed systems, and industrial networking.</li>
-                        <li>**Master in Instrumentation and Applied Electronics:** Design and maintenance of electronic measuring and sensing equipment.</li>
-                    </ul>
-                    
-                    <h4>3. Doctorate (D)</h4>
-                    <p>Research focused on areas such as advanced robust control, power quality improvement, and optimization of energy storage systems.</p>
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 30px;">
+                    <div class="stat-item" style="background: var(--primary); padding: 20px; border-radius: 8px;">
+                        <i class="fas fa-users fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
+                        <h3 style="color: white; margin: 0;">1,500+</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Students</p>
+                    </div>
+                    <div class="stat-item" style="background: var(--primary); padding: 20px; border-radius: 8px;">
+                        <i class="fas fa-user-tie fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
+                        <h3 style="color: white; margin: 0;">60</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Professors</p>
+                    </div>
+                    <div class="stat-item" style="background: var(--primary); padding: 20px; border-radius: 8px;">
+                        <i class="fas fa-network-wired fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
+                        <h3 style="color: white; margin: 0;">8</h3>
+                        <p style="color: rgba(255,255,255,0.8);">High-Tech Labs</p>
+                    </div>
                 </div>
-                
-                <h3>Research and Laboratories</h3>
-                <p>The department actively contributes to regional and international research through its highly active laboratories:</p>
-                <ul>
-                    <li>**Laboratory of Electrical and Industrial Control Systems (LESCI):** Focusing on complex control algorithms and industrial optimization.</li>
-                    <li>**Energy and Applied Electronics Research Unit (EREA):** Dedicated to renewable energy integration and power electronics development.</li>
-                </ul>
 
-                <a href="../schooling/TimeTable.html" class="btn btn-secondary" style="margin-top: 20px;"><i class="fas fa-table"></i> View Time Table</a>
-                
+                <h2 style="margin-bottom: 20px;">Academic Programs</h2>
+                <div class="program-grid">
+                    <div class="program-card">
+                        <span class="duration-badge">3 Years</span>
+                        <h3><i class="fas fa-graduation-cap"></i> Licence (Bachelor)</h3>
+                        <p><strong>Electrical Engineering & Automation</strong></p>
+                        <p>Core foundations in circuits, electromagnetism, and programming.</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <span class="duration-badge">2 Years</span>
+                        <h3><i class="fas fa-bolt"></i> Master: Power Systems</h3>
+                        <p>Smart grids, high voltage engineering, and renewable energy integration.</p>
+                    </div>
+
+                    <div class="program-card">
+                        <span class="duration-badge">2 Years</span>
+                        <h3><i class="fas fa-robot"></i> Master: Automation</h3>
+                        <p>Industrial robotics, PLC programming, and advanced control theory.</p>
+                    </div>
+
+                    <div class="program-card">
+                        <span class="duration-badge">2 Years</span>
+                        <h3><i class="fas fa-wifi"></i> Master: Telecommunications</h3>
+                        <p>Signal processing, 5G networks, and optical communications.</p>
+                    </div>
+                </div>
+
+                <div class="content-card" style="margin-top: 30px;">
+                    <h2><i class="fas fa-microscope"></i> Laboratories & Facilities</h2>
+                    <p>Our students and researchers have access to cutting-edge equipment for experimentation and innovation.</p>
+                    <div class="lab-grid">
+                        <div>
+                            <h3>LSEI: Laboratory of Industrial Electrical Systems</h3>
+                            <p>Advanced motor control and power electronics.</p>
+                        </div>
+                        <div>
+                            <h3>LAT: Laboratory of Automation & Telecomm.</h3>
+                            <p>IoT development, signal processing, and robotics.</p>
+                        </div>
+                        <div>
+                            <h3>LRE: Laboratory of Renewable Energies</h3>
+                            <p>Solar photovoltaic and wind energy optimization.</p>
+                        </div>
+                        <div>
+                            <h3>Smart Grid Simulation Center</h3>
+                            <p>Real-time digital simulation of power networks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 40px; margin-bottom: 20px;">Distinguished Faculty Members</h2>
+                <div class="faculty-grid member-grid">
+                        <div class="member-card">
+                            <div class="photo"><img src="../assets/img/faculty10.jpg" alt="Dr. AbdelMadjid Tebboune"></div>
+                            <h3>Dr. AbdelMadjid Tebboune</h3>
+                            <div class="role">Professor</div>
+                            <div class="dept">Power Systems</div>
+                            <div class="tag">PhD</div>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="photo"><img src="../assets/img/faculty11.jpg" alt="Dr. Ismahane Mahdi"></div>
+                            <h3>Dr. Ismahane Mahdi</h3>
+                            <div class="role">Associate Professor</div>
+                            <div class="dept">Control Systems</div>
+                            <div class="tag">PhD</div>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="photo"><img src="../assets/img/faculty12.jpg" alt="Dr. Mourad Zerguine"></div>
+                            <h3>Dr. Mourad Zerguine</h3>
+                            <div class="role">Senior Lecturer</div>
+                            <div class="dept">Power Electronics</div>
+                            <div class="tag">PhD</div>
+                        </div>
+                    </div>
+
             </div>
-            
+
             <aside class="sidebar-menu">
-                <h3>Departments</h3>
-                <ul>
-                    <li><a href="ProcessEngineeringDepartement.html"><i class="fas fa-flask"></i> Process Engineering</a></li>
-                    <li><a href="MechanicalEngineeringDepartement.html"><i class="fas fa-cogs"></i> Mechanical Eng.</a></li>
-                    <li><a href="ElectricalSystemsEngineeringDepartement.html" class="active"><i class="fas fa-bolt"></i> **Electrical Systems Eng.**</a></li>
-                    <li><a href="CivilEngineeringDepartement.html"><i class="fas fa-hard-hat"></i> Civil Engineering</a></li>
-                    <li><hr></li>
-                    <li><a href="departments.html"><i class="fas fa-sitemap"></i> All Departments Overview</a></li>
-                </ul>
                 
-                <div class="sidebar-contact-box">
-                    <h4>Department Contact</h4>
-                    <p>Email: **ise@univ-boumerdes.dz**</p>
-                    <p>Phone: +213 (0) 24 94 XX XX</p>
-                    <a href="../contact/contact.html" class="btn btn-primary-small">Contact Us</a>
+                <div class="hod-card">
+                    <div class="hod-img">
+                        <img src="../assets/img/hod-electrical.jpg" alt="Pr. Noureddine Messaoudi" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <div class="hod-info">
+                        <h3 style="color: var(--primary); font-size: 1rem;">Head of Department</h3>
+                        <h3 style="font-size: 1.1rem; margin: 5px 0;">Pr. Noureddine Messaoudi</h3>
+                        <span class="signature">PhD in Electrical Engineering</span>
+                    </div>
                 </div>
+
+                <div class="sidebar-contact-box">
+                    <h4><i class="fas fa-envelope-open-text"></i> Contact Us</h4>
+                    <ul class="info-list">
+                        <li><strong>Email:</strong> n.messaoudi@univ-boumerdes.dz</li>
+                        <li><strong>Phone:</strong> +213 0698535737</li>
+                        <li><strong>Location:</strong> Block B, Floor 1</li>
+                    </ul>
+                    <a href="../contact/contact.html" class="btn-primary btn-full" style="text-align: center; display: block; margin-top: 10px;">Send a Message</a>
+                </div>
+
+                <h3 style="margin-top: 30px;">Quick Links</h3>
+                <ul>
+                    <li><a href="../schooling/TimeTable.html"><i class="fas fa-calendar-alt"></i> Time Tables</a></li>
+                    <li><a href="../schooling/ScheduleOfExams.html"><i class="fas fa-file-alt"></i> Exam Schedule</a></li>
+                    <li><a href="../at_home_learning/Elearning.html"><i class="fas fa-laptop"></i> E-learning Access</a></li>
+                </ul>
+
             </aside>
-            
-        </section>
-
+        </div>
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -194,5 +260,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

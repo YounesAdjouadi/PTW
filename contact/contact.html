@@ -4,22 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact Us | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour la page Contact (STYLE DÉPARTEMENT CORRIGÉ) */
+        .contact-hero {
+            /* Similaire au style dept-hero: image de fond avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/contact-bg.jpg'); /* Image générique de bureau/campus */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .contact-hero h1 { 
+             color: white; 
+             font-size: 3rem; 
+             margin-bottom: 10px; 
+        }
+        .contact-hero p { 
+             font-size: 1.2rem; 
+             opacity: 0.9; 
+        }
+
+        /* Grille principale pour le formulaire et les infos */
+        .contact-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px;
+            padding: 40px 0;
+        }
+        
+        /* Form Card Styling (Left Column) */
+        .form-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            height: fit-content; 
+        }
+        .form-card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        /* Styles pour les champs input, select et textarea */
+        .form-group input[type="text"], 
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Info Cards Styling (Right Column) */
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px; 
+        }
+        .info-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        .info-list li {
+            margin-bottom: 12px;
+            font-size: 1em;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.4;
+        }
+        .info-list li i {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.1em;
+            padding-top: 2px;
+            min-width: 20px; 
+        }
+        .info-list strong {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+        
+        /* Map Container */
+        .map-container-contact {
+            height: 300px; 
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 900px) {
+            .contact-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +149,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,7 +158,6 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -48,7 +166,6 @@
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -56,166 +173,141 @@
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
-
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
-
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>💬 Contact the Faculty of Technology</h1>
-            <p>Get in touch with the administration, departments, or specialized services.</p>
-        </section>
-
-        <section class="section container content-grid">
-            
-            <div class="main-content-area">
-                
-                <h2>General Contact Information</h2>
-                
-                <p>For urgent matters or general inquiries, please use the following contact details for the central administration:</p>
-
-                <div class="contact-info-list">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Address:</h4>
-                        <p>Faculty of Technology, Cité Frantz Fanon, Boumerdes 35000, Algeria</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h4>Phone:</h4>
-                        <p>+213 (0) 24 94 14 99</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Email (General Inquiries):</h4>
-                        <p>contactft@univ-boumerdes.dz</p>
-                    </div>
-                </div>
-
-                <h2 style="margin-top: 40px;">Contact Form</h2>
-                <p>Use the form below for non-urgent questions regarding admissions, programs, or general logistics. Please be specific in your inquiry.</p>
-
-                <form action="#" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Your Full Name (Nom et Prénom):</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email (Email):</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject (Sujet):</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">-- Select Subject --</option>
-                            <option value="admissions">Admissions/Registration</option>
-                            <option value="schooling">Schooling/Exams/Grades</option>
-                            <option value="technical">Technical Support/E-learning</option>
-                            <option value="other">Other Inquiry</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message (Votre Message):</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-                </form>
-                
-            </div>
-            
-            <aside class="sidebar-menu">
-                <h3>Contact by Department</h3>
-                <ul>
-                    <li><a href="../departments/ProcessEngineeringDepartement.html#contact"><i class="fas fa-flask"></i> Process Engineering</a></li>
-                    <li><a href="../departments/MechanicalEngineeringDepartement.html#contact"><i class="fas fa-cogs"></i> Mechanical Eng.</a></li>
-                    <li><a href="../departments/ElectricalSystemsEngineeringDepartement.html#contact"><i class="fas fa-bolt"></i> Electrical Systems Eng.</a></li>
-                    <li><a href="../departments/CivilEngineeringDepartement.html#contact"><i class="fas fa-hard-hat"></i> Civil Engineering</a></li>
-                    <li><hr></li>
-                    <li><a href="../schooling/schooling.html"><i class="fas fa-graduation-cap"></i> Schooling Administration</a></li>
-                </ul>
-                <div class="sidebar-contact-box">
-                    <h4>Social Media</h4>
-                    <p>Follow us for news and updates:</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </aside>
-            
-        </section>
-
-        <section class="section container" style="padding-top: 0;">
-            <h2>Our Location</h2>
-            <div class="map-container-large">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                    width="100%" height="400"
-                    style="border:0; border-radius:8px;"
-                    loading="lazy"
-                    title="Map showing the location of the Faculty of Technology, Boumerdes">
-                </iframe>
-            </div>
-        </section>
-
-    </main>
-
-
-    <footer>
+    <header class="contact-hero">
         <div class="container">
-            <div class="footer-grid">
-                <div class="f-col">
-                    <h4>Faculty of Technology</h4>
-                    <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
-                    <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
-                    <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
-                </div>
+            <h1>Contact Us</h1>
+            <p>Get in touch with the Faculty of Technology</p>
+        </div>
+    </header>
 
-                <div class="f-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+    <main class="container">
+        <div class="contact-content-grid">
+            
+            <div class="contact-form-area">
+                <div class="form-card">
+                    <h2>Send us a Message</h2>
+                    <div id="statusMessage" class="status-message hidden"></div>
+                    <form action="process_contact.php" method="POST">
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="full_name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address *</label>
+                            <input type="email" id="emailAddress" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="Admission Inquiry">Admission Inquiry</option>
+                                <option value="Program Information">Program Information</option>
+                                <option value="Research Collaboration">Research Collaboration</option>
+                                <option value="General Question">General Question</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: auto;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-info-area">
+                
+                <div class="info-card">
+                    <h3>Contact Information</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> 
+                            <div>
+                                <strong>Address</strong>
+                                Faculty of Technology<br>
+                                University of Boumerdes<br>
+                                Avenue de l'Indépendance<br>
+                                35000 Boumerdes, Algeria
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i> 
+                            <div>
+                                <strong>Phone</strong>
+                                +213 24 81 95 06<br>
+                                +213 24 81 95 07
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i> 
+                            <div>
+                                <strong>Email</strong>
+                                contact@ft.univ-boumerdes.dz<br>
+                                dean@ft.univ-boumerdes.dz
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i> 
+                            <div>
+                                <strong>Office Hours</strong>
+                                Sunday - Thursday<br>
+                                8:00 AM - 4:00 PM
+                            </div>
+                        </li>
                     </ul>
                 </div>
-
-                <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
-                    <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                
+                <div class="info-card">
+                    <h3>Our Location</h3>
+                    <div class="map-container-contact">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen></iframe>
                     </div>
                 </div>
-
-            </div>
-
-            <div class="copyright">
-                <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
+                
             </div>
         </div>
-    </footer>
 
+
+    </main>
     <script src="../assets/js/main.js"></script>
+    <script>
+        // Show a small status banner based on ?status= query param
+        (function(){
+            var params = new URLSearchParams(window.location.search);
+            var status = params.get('status');
+            if (!status) return;
+            var msgBox = document.getElementById('statusMessage');
+            if (!msgBox) return;
+            if (status === 'success') {
+                msgBox.className = 'status-message success';
+                msgBox.textContent = 'Message envoyé. Merci — nous vous répondrons dès que possible.';
+            } else {
+                msgBox.className = 'status-message error';
+                msgBox.textContent = 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer plus tard.';
+            }
+            msgBox.style.display = 'block';
+            // remove status from URL without reloading (so message persists until reload)
+            if (window.history && window.history.replaceState) {
+                var url = new URL(window.location.href);
+                url.searchParams.delete('status');
+                window.history.replaceState({}, document.title, url.toString());
+            }
+        })();
+    </script>
 </body>
-
 </html>

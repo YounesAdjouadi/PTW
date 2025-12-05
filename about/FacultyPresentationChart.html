@@ -3,33 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Faculty Organization Chart</title>
+    <title>Faculty Presentation Chart | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique (style cohérent) */
+        .chart-hero {
+            /* Image de fond académique avec overlay bleu foncé */
+            /* fallback uses a site image that already exists so the hero shows immediately */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/chart-bg-home.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .chart-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .chart-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Conteneur principal pour le chart */
+        .chart-container {
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Emplacement pour l'image de l'organigramme */
+        .chart-placeholder {
+            width: 100%;
+            min-height: 450px; /* Hauteur minimale pour l'espace réservé */
+            background: #e0e7ee; 
+            border: 2px dashed var(--primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2em;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        .chart-placeholder i {
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+        
+        /* Grille pour les sections administratives */
+        .admin-section h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .admin-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .admin-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--accent);
+        }
+        .admin-card h3 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .admin-card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        .admin-card p {
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+        .admin-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .admin-card ul li {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .admin-card ul li i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="about.html" class="nav-link active">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="MissionAndVision.html">Mission & Vision</a></li>
                         <li><a href="Deanswelcome.html">Dean's Welcome</a></li>
-                        <li><a href="FacultyPresentationChart.html" class="active">Faculty Presentation</a></li>
+                        <li><a href="FacultyPresentationChart.html" class="active-dropdown">Faculty Presentation</a></li>
                         <li><a href="Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,122 +141,120 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../schooling/StudySchedule.html">Study Schedule</a></li>
                         <li><a href="../schooling/TimeTable.html">Time Table</a></li>
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
-                        <li><a href="../schooling/schooling.html">Schooling Overview</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="chart-hero">
+        <div class="container">
+            <h1>Faculty Organizational Chart</h1>
+            <p>Structure and administration of the Faculty of Technology.</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-        <section class="page-header container">
-            <h1>🏛️ Faculty Presentation Chart</h1>
-            <p>Understand the administrative and academic structure of our institution.</p>
+    <main class="container">
+        
+        <section class="chart-container">
+            <h2>Organizational Hierarchy</h2>
+            
+            <div class="chart-placeholder">
+                <img src="../assets/img/chart-bg-home.jpg" alt="Faculty Organizational Chart" style="max-width: 100%; height: auto; border-radius: 6px;">
+                </div>
+            
+            <p style="color: var(--text-gray); font-style: italic; margin-top: 20px;">The Faculty is structured according to the Algerian university governance model, ensuring clear lines of academic and administrative responsibilities.</p>
         </section>
 
-        <section class="section container content-grid">
-            
-            <div class="main-content-area">
+        <section class="admin-section">
+            <h2>Key Administrative Divisions</h2>
+            <div class="admin-cards-grid">
                 
-                <h2>Organizational Structure</h2>
-                
-                <p>The Faculty of Technology is governed by a clear structure designed to optimize academic quality, research effectiveness, and administrative efficiency. The chart below illustrates the hierarchy, from the Dean's Office to the different departments and research units.</p>
-                
-                <div class="chart-container" style="text-align: center; margin: 40px 0;">
-                    <h3 style="color: var(--primary);">Visual Organizational Chart</h3>
-                    <p class="text-muted">Click to enlarge or download the official organizational document.</p>
-                    
-                    
+                <div class="admin-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Vice Dean for Pedagogy</h3>
+                    <p>Responsible for all academic matters, student enrollment, course scheduling, and examination management.</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Academic Affairs Office</li>
+                        <li><i class="fas fa-caret-right"></i> Student Orientation and Information</li>
+                    </ul>
+                </div>
+
+                <div class="admin-card">
+                    <h3><i class="fas fa-flask"></i> Vice Dean for Post-Graduation & Research</h3>
+                    <p>Manages Master's and Doctoral programs, research projects (PRFU), scientific publications, and continuous training.</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Post-Graduation Department</li>
+                        <li><i class="fas fa-caret-right"></i> Research and Innovation Unit</li>
+                    </ul>
+                </div>
+
+                <div class="admin-card">
+                    <h3><i class="fas fa-cogs"></i> General Secretariat</h3>
+                    <p>Oversees financial resources, human resources, general administration, infrastructure, and facility maintenance.</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Human Resources Office</li>
+                        <li><i class="fas fa-caret-right"></i> Budget and Accounting Service</li>
+                    </ul>
+                </div>
+
+                <div class="admin-card">
+                    <h3><i class="fas fa-users"></i> Faculty Council (Conseil de Faculté)</h3>
+                    <p>The deliberative body responsible for approving academic strategies, curricula, and institutional policies.</p>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Scientific Committee</li>
+                        <li><i class="fas fa-caret-right"></i> Disciplinary Board</li>
+                    </ul>
                 </div>
                 
-                <h3>Key Components:</h3>
-                <ul>
-                    <li>**Dean's Office (Doyen):** Strategic leadership and representation.</li>
-                    <li>**Vice Deans:** Responsible for Pedagogy, Post-Graduation, and Scientific Research.</li>
-                    <li>**Departments:** The core academic units (Civil, Mechanical, Process, Electrical).</li>
-                    <li>**Administrative Services:** Managing schooling, finance, and human resources.</li>
-                </ul>
-
-                <a href="Programs.html" class="btn btn-secondary" style="margin-top: 20px;">Explore Our Academic Programs <i class="fas fa-arrow-right"></i></a>
-                
             </div>
-            
-            <aside class="sidebar-menu">
-                <h3>Explore the Faculty</h3>
-                <ul>
-                    <li><a href="MissionAndVision.html"><i class="fas fa-bullseye"></i> Mission & Vision</a></li>
-                    <li><a href="Deanswelcome.html"><i class="fas fa-user-tie"></i> Dean's Welcome</a></li>
-                    <li><a href="FacultyPresentationChart.html" class="active"><i class="fas fa-chart-bar"></i> Faculty Presentation Chart</a></li>
-                    <li><a href="Programs.html"><i class="fas fa-book"></i> Our Programs of Study</a></li>
-                    </ul>
-            </aside>
-            
         </section>
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -163,5 +263,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

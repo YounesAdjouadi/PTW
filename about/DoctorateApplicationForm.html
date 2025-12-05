@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doctorate Application Form | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour l'application */
+        .application-hero {
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/application-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .application-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .application-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+        
+        /* Conteneur principal du formulaire */
+        .form-container-lg {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 60px;
+        }
+
+        /* Sections du formulaire */
+        .form-section {
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .form-section h2 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        /* Grille pour les champs */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        /* Styles des champs */
+        .form-group input[type="text"], 
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        .form-group input[type="file"] {
+             border: none;
+             padding: 10px 0;
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        /* Bouton de soumission */
+        .submit-area {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .submit-area button {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* Champs sur toute la largeur (utilisé pour les notes ou les descriptions) */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        /* Notes d'instruction */
+        .instruction-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f8ff; 
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
+            </a>
+            <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="nav-link active">About Us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="MissionAndVision.html">Mission & Vision</a></li>
+                        <li><a href="Deanswelcome.html">Dean's Welcome</a></li>
+                        <li><a href="FacultyPresentationChart.html">Faculty Presentation</a></li>
+                        <li><a href="Programs.html" class="active-dropdown">Programs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="../departments/ProcessEngineeringDepartement.html">Process Engineering</a></li>
+                        <li><a href="../departments/MechanicalEngineeringDepartement.html">Mechanical Eng.</a></li>
+                        <li><a href="../departments/ElectricalSystemsEngineeringDepartement.html">Electrical Systems Eng.</a></li>
+                        <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="../schooling/StudySchedule.html">Study Schedule</a></li>
+                        <li><a href="../schooling/TimeTable.html">Time Table</a></li>
+                        <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
+                        <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
+                    </ul>
+                </li>
+                <li><a href="../library/library.html" class="nav-link">Library</a></li>
+                <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="application-hero">
+        <div class="container">
+            <h1>Doctorate Candidacy Application</h1>
+            <p>Academic Year 2025/2026</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container-lg">
+            
+            <div class="instruction-note">
+                <p><strong><i class="fas fa-info-circle"></i> Instructions:</strong> Please complete all required fields. Ensure your uploaded documents are in PDF format and do not exceed 5MB each. Incomplete applications will not be processed.</p>
+            </div>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                
+                <div class="form-section">
+                    <h2><i class="fas fa-user"></i> Personal Information</h2>
+                    <div class="form-grid">
+                        
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth *</label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nationality">Nationality *</label>
+                            <input type="text" id="nationality" name="nationality" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Academic Background</h2>
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="masterDegree">Master's Degree Title *</label>
+                            <input type="text" id="masterDegree" name="masterDegree" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="graduationYear">Graduation Year (Master) *</label>
+                            <input type="number" id="graduationYear" name="graduationYear" min="2000" max="2025" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="masterUniversity">Issuing University / Institution *</label>
+                            <input type="text" id="masterUniversity" name="masterUniversity" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="targetDept">Target Department for Doctorate *</label>
+                            <select id="targetDept" name="targetDept" required>
+                                <option value="" disabled selected>Select a Department</option>
+                                <option value="ProcessEng">Process Engineering</option>
+                                <option value="MechanicalEng">Mechanical Engineering</option>
+                                <option value="CivilEng">Civil Engineering</option>
+                                <option value="ElectricalSystemsEng">Electrical Systems Engineering</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2><i class="fas fa-flask"></i> Thesis Project Proposal</h2>
+                    <div class="form-grid">
+                        
+                        <div class="form-group full-width">
+                            <label for="thesisTitle">Proposed Thesis Title *</label>
+                            <input type="text" id="thesisTitle" name="thesisTitle" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="researchSummary">Summary of Research Topic (Max 500 words) *</label>
+                            <textarea id="researchSummary" name="researchSummary" required></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="supervisorPref">Preferred Supervisor (If known)</label>
+                            <input type="text" id="supervisorPref" name="supervisorPref" placeholder="E.g., Prof. Dr. [Name]">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2><i class="fas fa-upload"></i> Required Documents (PDF Only)</h2>
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="transcript">Master's Transcripts / Mark Sheets *</label>
+                            <input type="file" id="transcript" name="transcript" accept=".pdf" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="diploma">Master's Diploma/Certificate *</label>
+                            <input type="file" id="diploma" name="diploma" accept=".pdf" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cv">Curriculum Vitae (CV) *</label>
+                            <input type="file" id="cv" name="cv" accept=".pdf" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proposalDoc">Detailed Research Proposal (Extended) *</label>
+                            <input type="file" id="proposalDoc" name="proposalDoc" accept=".pdf" required>
+                        </div>
+
+                    </div>
+                    <div class="instruction-note" style="background: #fff3e0; border-left-color: #f7a049;">
+                        <p><i class="fas fa-exclamation-triangle"></i> Note: Ensure all documents are clearly named (e.g., `Nom_Prenom_CV.pdf`).</p>
+                    </div>
+                </div>
+
+                <div class="submit-area">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-check-circle"></i> Submit Application
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

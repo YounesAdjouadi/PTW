@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Civil Engineering Department | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour le Génie Civil */
+        .dept-hero {
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/civil-bg.jpg'); /* Remplacez par votre image de fond pour le Génie Civil */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .dept-hero h1 { color: white; font-size: 3rem; margin-bottom: 10px; }
+        .dept-hero p { font-size: 1.2rem; opacity: 0.9; }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +42,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="departments.html" class="nav-link active">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,153 +51,208 @@
                         <li><a href="CivilEngineeringDepartement.html" class="active">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../schooling/StudySchedule.html">Study Schedule</a></li>
                         <li><a href="../schooling/TimeTable.html">Time Table</a></li>
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
-                        <li><a href="../schooling/schooling.html">Schooling Overview</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="dept-hero">
+        <div class="container">
+            <h1>Civil Engineering Department</h1>
+            <p>Building the Foundations of Tomorrow's Infrastructure</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>🏗️ Civil Engineering Department</h1>
-            <p>Designing, planning, and managing the infrastructures that shape our modern world.</p>
-        </section>
-
-        <section class="section container content-grid">
+    <main class="container department-body">
+        <div class="content-grid">
             
             <div class="main-content-area">
                 
-                <h2>Mission and Focus</h2>
-                
-                <p>The Civil Engineering Department is dedicated to training professionals capable of tackling complex challenges in construction, transportation, hydraulics, and environmental engineering. We emphasize a foundation in **structural analysis, geotechnical engineering, and sustainable development**.</p>
-                
-                <p>Our curriculum is designed to combine rigorous theoretical knowledge with extensive practical application through laboratory work and mandatory field internships.</p>
-
-                <div class="key-facts-box">
-                    <h4><i class="fas fa-chart-line"></i> Key Figures</h4>
-                    <ul>
-                        <li>**Head of Department:** Prof. Dr. [Nom du chef de département]</li>
-                        <li>**Established:** 1980</li>
-                        <li>**Student Enrollment:** ~1500 students (LMD)</li>
-                    </ul>
+                <div class="content-card">
+                    <h2>Department Overview</h2>
+                    <p>The Department of Civil Engineering at the Faculty of Technology is committed to excellence in education, research, and professional practice in the field of civil infrastructure development. Our comprehensive programs encompass all major areas of civil engineering, including **structural engineering**, **construction management**, **geotechnical engineering**, **transportation**, and **water resources**.</p>
+                    <p>With modern laboratories and experienced faculty members, we prepare our students to become competent civil engineers capable of designing, constructing, and maintaining the infrastructure that supports modern society. Our curriculum emphasizes both theoretical foundations and practical applications, ensuring graduates are ready to tackle real-world engineering challenges.</p>
+                    <p>The department maintains strong collaborations with construction companies, consulting firms, and government agencies, providing students with valuable internship opportunities and exposure to actual construction projects. Our research focuses on **sustainable infrastructure**, **earthquake engineering**, **innovative construction materials**, and **smart city technologies**.</p>
                 </div>
 
-                <h3>Academic Programs</h3>
-                <p>We offer a comprehensive range of programs under the LMD system, focusing on key areas of civil engineering:</p>
-                
-                <div class="program-sections">
-                    <h4>1. Bachelor's (L3) - Common Core: Génie Civil</h4>
-                    <p>Provides essential knowledge in applied mathematics, material resistance, hydrodynamics, and construction technology.</p>
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 30px;">
+                    <div class="stat-item" style="background: var(--primary); padding: 20px; border-radius: 8px;">
+                        <i class="fas fa-city fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
+                        <h3 style="color: white; margin: 0;">1,100+</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Students</p>
+                    </div>
+                    <div class="stat-item" style="background: var(--primary); padding: 20px; border-radius: 8px;">
+                        <i class="fas fa-drafting-compass fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
+                        <h3 style="color: white; margin: 0;">40</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Faculty Members</p>
+                    </div>
+                    <div class="stat-item" style="background: var(--primary); padding: 20px; border-radius: 8px;">
+                        <i class="fas fa-hard-hat fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
+                        <h3 style="color: white; margin: 0;">5</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Specialized Labs</p>
+                    </div>
+                </div>
+
+                <h2 style="margin-bottom: 20px;">Academic Programs</h2>
+                <div class="program-grid">
+                    <div class="program-card">
+                        <span class="duration-badge">3 Years</span>
+                        <h3><i class="fas fa-graduation-cap"></i> Licence (Bachelor)</h3>
+                        <p><strong>Civil Engineering Common Core</strong></p>
+                        <p>Introduction to structural design, statics, and construction materials.</p>
+                    </div>
                     
-                    <h4>2. Master's (M) Specializations (2 years)</h4>
-                    <ul>
-                        <li>**Master in Structures and Materials:** Focus on design, calculation, and durability of complex structures (bridges, tall buildings).</li>
-                        <li>**Master in Hydraulic and Water Resources:** Management of water systems, sanitation, and hydraulic constructions (dams, networks).</li>
-                        <li>**Master in Transportation and Geotechnics:** Design of road networks, foundation engineering, and soil mechanics.</li>
-                    </ul>
-                    
-                    <h4>3. Doctorate (D)</h4>
-                    <p>Advanced research tracks, often linked to national infrastructure projects and seismic engineering studies.</p>
-                </div>
-                
-                <h3>Research and Laboratories</h3>
-                <p>Our department hosts leading research units focused on immediate societal and industrial needs, including:</p>
-                <ul>
-                    <li>**Laboratory of Structural and Anti-Seismic Engineering (LISA):** Dedicated to resilient construction design.</li>
-                    <li>**Hydraulic and Environmental Modeling Unit (UHME):** Focusing on water management and pollution control.</li>
-                </ul>
+                    <div class="program-card">
+                        <span class="duration-badge">2 Years</span>
+                        <h3><i class="fas fa-bridge"></i> Master: Structural Engineering</h3>
+                        <p>Advanced analysis, earthquake resistance, and complex building design.</p>
+                    </div>
 
-                <a href="../schooling/StudySchedule.html" class="btn btn-secondary" style="margin-top: 20px;"><i class="fas fa-calendar-alt"></i> View Study Schedule</a>
-                
-            </div>
-            
-            <aside class="sidebar-menu">
-                <h3>Departments</h3>
-                <ul>
-                    <li><a href="ProcessEngineeringDepartement.html"><i class="fas fa-flask"></i> Process Engineering</a></li>
-                    <li><a href="MechanicalEngineeringDepartement.html"><i class="fas fa-cogs"></i> Mechanical Eng.</a></li>
-                    <li><a href="ElectricalSystemsEngineeringDepartement.html"><i class="fas fa-bolt"></i> Electrical Systems Eng.</a></li>
-                    <li><a href="CivilEngineeringDepartement.html" class="active"><i class="fas fa-hard-hat"></i> **Civil Engineering**</a></li>
-                    <li><hr></li>
-                    <li><a href="departments.html"><i class="fas fa-sitemap"></i> All Departments Overview</a></li>
-                </ul>
-                
-                <div class="sidebar-contact-box">
-                    <h4>Department Contact</h4>
-                    <p>Email: **gcivil@univ-boumerdes.dz**</p>
-                    <p>Phone: +213 (0) 24 94 XX XX</p>
-                    <a href="../contact/contact.html" class="btn btn-primary-small">Contact Us</a>
-                </div>
-            </aside>
-            
-        </section>
+                    <div class="program-card">
+                        <span class="duration-badge">2 Years</span
+                        >
+                        <h3><i class="fas fa-road"></i> Master: Public Works & Transport</h3>
+                        <p>Highway design, urban planning, and infrastructure management.</p>
+                    </div>
 
-    </main>
-
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="f-col">
-                    <h4>Faculty of Technology</h4>
-                    <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
-                    <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
-                    <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
+                    <div class="program-card">
+                        <span class="duration-badge">2 Years</span>
+                        <h3><i class="fas fa-mountain"></i> Master: Geotechnical Engineering</h3>
+                        <p>Soil mechanics, foundation design, and tunneling.</p>
+                    </div>
                 </div>
 
-                <div class="f-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
-                    </ul>
+                <div class="content-card" style="margin-top: 30px;">
+                    <h2><i class="fas fa-microscope"></i> Laboratories & Facilities</h2>
+                    <p>Our students train using professional-grade tools for testing materials and simulating construction environments.</p>
+                    <div class="lab-grid">
+                        <div>
+                            <h3>LGE: Lab of Geotechnical Engineering</h3>
+                            <p>Soil and rock mechanics testing.</p>
+                        </div>
+                        <div>
+                            <h3>LSM: Lab of Structures and Materials</h3>
+                            <p>Concrete, steel, and advanced material resistance testing.</p>
+                        </div>
+                        <div>
+                            <h3>Hydraulics & Water Resources Lab</h3>
+                            <p>Study of flow, water management, and network design.</p>
+                        </div>
+                        <div>
+                            <h3>BIM & Design Studio</h3>
+                            <p>Computer labs equipped for Building Information Modeling.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
-                    <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                <h2 style="margin-top: 40px; margin-bottom: 20px;">Distinguished Faculty Members</h2>
+                <div class="faculty-grid member-grid">
+                    <div class="member-card">
+                        <div class="photo"><img src="../assets/img/faculty1.jpg" alt="Prof. Nadia Cherif"></div>
+                        <h3>Prof. Nadia Cherif</h3>
+                        <div class="role">Professor</div>
+                        <div class="dept">Structural Engineering</div>
+                        <div class="tag">PhD</div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="photo"><img src="../assets/img/faculty2.jpg" alt="Dr. Karim Sassi"></div>
+                        <h3>Dr. Karim Sassi</h3>
+                        <div class="role">Associate Professor</div>
+                        <div class="dept">Geotechnics</div>
+                        <div class="tag">PhD</div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="photo"><img src="../assets/img/faculty3.jpg" alt="Dr. Fatiha Belaid"></div>
+                        <h3>Dr. Fatiha Belaid</h3>
+                        <div class="role">Senior Lecturer</div>
+                        <div class="dept">Hydraulics</div>
+                        <div class="tag">PhD</div>
                     </div>
                 </div>
 
             </div>
 
+            <aside class="sidebar-menu">
+                
+                <div class="hod-card">
+                    <div class="hod-img">
+                        <img src="../assets/img/hod-civil.jpg" alt="Prof. Nadia Cherif" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <div class="hod-info">
+                        <h4 style="color: var(--primary); font-size: 1rem;">Head of Department</h4>
+                        <h3 style="font-size: 1.1rem; margin: 5px 0;">Prof. Dalila Acheli</h3>
+                        <span class="signature">PhD in Structural Engineering</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-contact-box">
+                    <h4><i class="fas fa-envelope-open-text"></i> Contact Us</h4>
+                    <ul class="info-list">
+                        <li><strong>Email:</strong> civil@univ-boumerdes.dz</li>
+                        <li><strong>Phone:</strong> +213 (0) 24 94 14 XX</li>
+                        <li><strong>Location:</strong> Block D, Floor 2</li>
+                    </ul>
+                    <a href="../contact/contact.html" class="btn-primary btn-full" style="text-align: center; display: block; margin-top: 10px;">Send a Message</a>
+                </div>
+
+                <h3 style="margin-top: 30px;">Quick Links</h3>
+                <ul>
+                    <li><a href="../schooling/TimeTable.html"><i class="fas fa-calendar-alt"></i> Time Tables</a></li>
+                    <li><a href="../schooling/ScheduleOfExams.html"><i class="fas fa-file-alt"></i> Exam Schedule</a></li>
+                    <li><a href="../at_home_learning/Elearning.html"><i class="fas fa-laptop"></i> E-learning Access</a></li>
+                </ul>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="f-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
+                    <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
+                    <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
+                    <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
+                </div>
+                <div class="f-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
+                    </ul>
+                </div>
+                <div class="f-col footer-map-col">
+                    <h4>Location</h4>
+                    <div class="footer-map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -194,5 +261,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

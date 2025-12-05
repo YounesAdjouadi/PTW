@@ -6,15 +6,16 @@
     <title>Faculty Library and Documentation Center | Faculty of Technology</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
 
             <ul class="nav-menu">
@@ -71,121 +72,179 @@
     </nav>
 
 
-    <main id="main-content">
+    <header class="library-hero">
+        <div class="container">
+            <h1>Faculty of Technology Library</h1>
+            <p>Your Center for Research, Learning, and Scientific Resources</p>
+        </div>
+    </header>
 
-        <section class="page-header container">
-            <h1>📚 Faculty Library & Documentation Center</h1>
-            <p>Access our specialized collection of engineering textbooks, scientific journals, and digital resources.</p>
-        </section>
-
-        <section class="section container content-grid">
-            
-            <div class="main-content-area">
+    <main class="container">
+        
+        <section class="content-card mb-40">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2>Search Library Catalogue</h2>
+                <p>Access our physical collection, thesis archive, and digital resources.</p>
                 
-                <h2>Library Services and Resources</h2>
-                
-                <p>The Faculty of Technology Library supports all LMD programs by providing up-to-date and comprehensive documentation in Civil, Mechanical, Electrical, and Process Engineering.</p>
-
-                <div class="library-services-grid">
-                    
-                    <div class="service-card">
-                        <i class="fas fa-search-dollar"></i>
-                        <h3>Catalog Search</h3>
-                        <p>Search our physical and digital collection of books, theses, and dissertations.</p>
-                        <a href="http://opac.univ-boumerdes.dz/" target="_blank" class="btn-link">Search Catalog <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-
-                    <div class="service-card">
-                        <i class="fas fa-database"></i>
-                        <h3>Digital Databases</h3>
-                        <p>Direct access to essential scientific platforms (e.g., ScienceDirect, SpringerLink) using university credentials.</p>
-                        <a href="#" target="_blank" class="btn-link">Access Databases <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-
-                    <div class="service-card">
-                        <i class="fas fa-book-reader"></i>
-                        <h3>Reading Rooms</h3>
-                        <p>Quiet spaces and collaborative areas available for individual and group study.</p>
-                        <a href="#opening-hours" class="btn-link">View Hours <i class="fas fa-arrow-down"></i></a>
-                    </div>
-                </div>
-
-                <h2 style="margin-top: 40px;">Specialized Collection Focus</h2>
-                
-                <p>Our collection is tailored to the needs of the technology sector, with strong holdings in:</p>
-                <ul>
-                    <li>**Applied Mathematics and Physics:** Essential foundation for all engineering disciplines.</li>
-                    <li>**Material Science and Nanotechnology:** Resources for advanced research in mechanical and process engineering.</li>
-                    <li>**Sustainable Infrastructure:** Focus on green building, renewable energy, and water management.</li>
-                    <li>**Automation and Control Systems:** Literature supporting the electrical and mechanical departments.</li>
-                </ul>
-
-                <a href="../at_home_learning/AllPlatformsOnline.html" class="btn btn-primary" style="margin-top: 20px;">Explore All Digital Platforms <i class="fas fa-globe"></i></a>
+                <form action="#" method="get" style="margin-top: 15px; display: flex; justify-content: center;">
+                    <input 
+                        type="search" 
+                        name="q" 
+                        placeholder="Search books, articles, or thesis..." 
+                        style="
+                            padding: 10px 15px; 
+                            width: 60%; 
+                            border: 2px solid var(--border-color); 
+                            border-right: none;
+                            border-radius: 4px 0 0 4px;
+                            font-size: 1em;
+                        "
+                    >
+                    <button 
+                        type="submit" 
+                        class="btn-primary" 
+                        style="
+                            border-radius: 0 4px 4px 0; 
+                            padding: 20px 30px; 
+                            display: flex; 
+                            align-items: center;
+                        "
+                    >
+                        <i class="fas fa-search"></i>  Search
+                    </button>
+                </form>
                 
             </div>
             
-            <aside class="sidebar-menu">
-                <h3 id="opening-hours">Opening Hours</h3>
-                <table class="hours-table">
-                    <tr>
-                        <td>Sunday - Thursday:</td>
-                        <td>**8:30 AM - 4:00 PM**</td>
-                    </tr>
-                    <tr>
-                        <td>Friday - Saturday:</td>
-                        <td>*Closed*</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 15px; font-size: 0.9em;">(Closed during official university holidays.)</p>
+            <hr>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <h2>Welcome Message</h2>
+                <p>The Faculty of Technology library is a vital resource dedicated to supporting the research and academic needs of our students, faculty, and staff. We offer a vast collection of specialized books, journals, and access to premium international databases essential for engineering and technology studies. Our mission is to provide a conducive environment for focused learning and innovation.</p>
+            </div>
+        </section>
+
+        <section class="mb-40">
+            <h2 style="text-align: center; margin-bottom: 30px;"><i class="fas fa-book-reader"></i> Library Services</h2>
+            <div class="content-grid library-cards" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
                 
-                <div class="sidebar-contact-box" style="margin-top: 30px;">
-                    <h4>Librarian Contact</h4>
-                    <p>For research assistance or interlibrary loan requests.</p>
-                    <p>Email: **bibliotech@univ-boumerdes.dz**</p>
-                    <a href="../contact/contact.html" class="btn btn-primary-small">Contact Us</a>
+                <div class="card">
+                    <div class="content">
+                        <div class="title"><i class="fas fa-clock"></i> Opening Hours</div>
+                        <div class="copy">
+                            <ul class="services-list">
+                                <li>Monday - Thursday: 8:00 AM - 6:00 PM</li>
+                                <li>Friday: 8:00 AM - 4:00 PM</li>
+                                <li>Saturday: 9:00 AM - 2:00 PM
+                                    <span class="service-details">Closed on Sunday</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </aside>
+
+                <div class="card">
+                    <div class="content">
+                        <div class="title"><i class="fas fa-hand-holding-heart"></i> Borrowing Services</div>
+                        <div class="copy">
+                            <ul class="services-list">
+                                <li>Students can borrow up to <strong>5 books</strong></li>
+                                <li>Loan period: <strong>2 weeks</strong> (renewable)</li>
+                                <li>Online reservation available
+                                    <span class="service-details">Check availability on the catalogue link above.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <div class="title"><i class="fas fa-desktop"></i> Computer Access</div>
+                        <div class="copy">
+                            <ul class="services-list">
+                                <li><strong>50+</strong> computer workstations</li>
+                                <li>High-speed internet access</li>
+                                <li>Printing & scanning services
+                                    <span class="service-details">Photocopier/Printer available on Level 1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+<br>
+<br>
+        <section class="mb-40">
+            <h2 style="text-align: center; margin-bottom: 30px;"><i class="fas fa-globe"></i> Premium Online Databases</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-style: italic;">Access is restricted to UMBB network users unless specified otherwise.</p>
             
+            <div class="db-grid">
+                
+                <a href="https://ieeexplore.ieee.org/" target="_blank" class="database-card">
+                    <h3><i class="fas fa-microchip"></i> IEEE Xplore</h3>
+                    <p>Engineering & Technology Research, standards, and journals, focused on electrical and computer sciences.</p>
+                </a>
+                
+                <a href="https://www.sciencedirect.com/" target="_blank" class="database-card">
+                    <h3><i class="fas fa-vial"></i> ScienceDirect</h3>
+                    <p>Scientific & Technical Publications, books, and articles covering all fields of science and engineering.</p>
+                </a>
+
+                <a href="https://link.springer.com/" target="_blank" class="database-card">
+                    <h3><i class="fas fa-book-open"></i> SpringerLink</h3>
+                    <p>Academic Journals & Books, providing millions of documents from scholarly literature.</p>
+                </a>
+
+                <a href="https://www.webofscience.com/" target="_blank" class="database-card">
+                    <h3><i class="fas fa-chart-line"></i> Web of Science</h3>
+                    <p>Citation Database, providing comprehensive citation data for research in various disciplines.</p>
+                </a>
+
+                <a href="https://www.scopus.com/" target="_blank" class="database-card">
+                    <h3><i class="fas fa-database"></i> Scopus</h3>
+                    <p>Abstract & Citation Database, covering a wide range of subjects, including technology and medicine.</p>
+                </a>
+
+                <a href="https://scholar.google.com/" target="_blank" class="database-card">
+                    <h3><i class="fas fa-search-plus"></i> Google Scholar</h3>
+                    <p>Scholarly Literature Search Engine, useful for finding articles across the web.</p>
+                </a>
+            </div>
         </section>
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
-                    <h4>Quick Links</h4>
+                    <h4>Our faculties</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>

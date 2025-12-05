@@ -4,32 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Academic Programs | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique (style cohérent) */
+        .programs-hero {
+            /* Image de fond académique avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/programs-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .programs-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .programs-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Section principale de l'offre LMD */
+        .lmd-section {
+            margin-bottom: 50px;
+        }
+        .lmd-section h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Grille des départements ou des programmes */
+        .program-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Style des cartes de programme */
+        .program-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .program-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .program-card h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 1.1em;
+        }
+        .program-card .dept-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--text-gray);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        .program-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 15px;
+        }
+        .program-card ul li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+        .program-card ul li i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        /* Style pour la section Doctorat (Recherche) */
+        .doctorate-card {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .doctorate-card h2 {
+            color: white;
+            border-bottom-color: var(--accent);
+        }
+        .doctorate-card p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="about.html" class="nav-link active">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="MissionAndVision.html">Mission & Vision</a></li>
                         <li><a href="Deanswelcome.html">Dean's Welcome</a></li>
                         <li><a href="FacultyPresentationChart.html">Faculty Presentation</a></li>
-                        <li><a href="Programs.html" class="active">Programs</a></li>
+                        <li><a href="Programs.html" class="active-dropdown">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,142 +150,162 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../schooling/StudySchedule.html">Study Schedule</a></li>
                         <li><a href="../schooling/TimeTable.html">Time Table</a></li>
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
-                        <li><a href="../schooling/schooling.html">Schooling Overview</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="programs-hero">
+        <div class="container">
+            <h1>Academic Programs</h1>
+            <p>A comprehensive offer of LMD (Licence, Master, Doctorate) degrees in specialized engineering fields.</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>📚 Our Academic Programs</h1>
-            <p>A comprehensive list of Bachelor's, Master's, and Doctoral programs offered across our departments.</p>
-        </section>
-
-        <section class="section container content-grid">
-            
-            <div class="main-content-area">
+    <main class="container">
+        
+        <section class="lmd-section">
+            <h2><i class="fas fa-university"></i> Undergraduate Programs (Licence)</h2>
+            <div class="program-cards-grid">
                 
-                <h2>LMD System in Engineering Technology</h2>
-                
-                <p>The Faculty of Technology operates under the European LMD system (Licence, Master, Doctorat), ensuring our degrees are internationally recognized and structured for both academic progression and professional integration.</p>
-                
-                <div class="program-list">
-                    
-                    <h3>Bachelor's (Licence) Programs - 3 Years</h3>
-                    <p>Foundation knowledge in core engineering sciences, preparing students for specialized Master's studies or immediate employment.</p>
+                <div class="program-card">
+                    <h3><i class="fas fa-flask"></i> Process Engineering</h3>
+                    <span class="dept-tag">Department of Process Engineering</span>
                     <ul>
-                        <li><a href="../departments/CivilEngineeringDepartement.html">**L. Civil Engineering**</a> (Infrastructure, Hydraulics)</li>
-                        <li><a href="../departments/MechanicalEngineeringDepartement.html">**L. Mechanical Engineering**</a> (Energy, Construction)</li>
-                        <li><a href="../departments/ProcessEngineeringDepartement.html">**L. Process Engineering**</a> (Chemical, Environment)</li>
-                        <li><a href="../departments/ElectricalSystemsEngineeringDepartement.html">**L. Electrical Engineering**</a> (Automation, Power Systems)</li>
+                        <li><i class="fas fa-caret-right"></i> Chemical Engineering</li>
+                        <li><i class="fas fa-caret-right"></i> Industrial Chemistry</li>
+                        <li><i class="fas fa-caret-right"></i> Petroleum Refining</li>
                     </ul>
-
-                    <h3 style="margin-top: 30px;">Master's (M) Programs - 2 Years</h3>
-                    <p>Advanced specialization and research training, focusing on complex problem-solving and industry application.</p>
-                    <div class="program-focus-grid">
-                        <div class="program-card">
-                            <h4>Civil Engineering Master's</h4>
-                            <p>Specializations in Advanced Structures, Water Resource Management, Urban Planning.</p>
-                        </div>
-                        <div class="program-card">
-                            <h4>Process Engineering Master's</h4>
-                            <p>Specializations in Petroleum Refining, Industrial Safety, Sustainable Process Design.</p>
-                        </div>
-                        <div class="program-card">
-                            <h4>Electrical Systems Master's</h4>
-                            <p>Specializations in Renewable Energy Grids, Industrial IT, Embedded Systems.</p>
-                        </div>
-                    </div>
-                    
-                    <h3 style="margin-top: 30px;">Doctorate (D) Programs - 3+ Years</h3>
-                    <p>Leading fundamental and applied research, preparing candidates for high-level academic or R&D careers.</p>
-                    <p>Programs are offered in partnership with our accredited research laboratories in each department.</p>
-
                 </div>
 
-                <a href="../contact/contact.html" class="btn btn-primary" style="margin-top: 20px;">Contact Admissions for Details <i class="fas fa-envelope"></i></a>
+                <div class="program-card">
+                    <h3><i class="fas fa-cogs"></i> Mechanical Engineering</h3>
+                    <span class="dept-tag">Department of Mechanical Engineering</span>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Mechanical Systems Design</li>
+                        <li><i class="fas fa-caret-right"></i> Thermodynamics & Energy</li>
+                        <li><i class="fas fa-caret-right"></i> Manufacturing Processes</li>
+                    </ul>
+                </div>
+
+                <div class="program-card">
+                    <h3><i class="fas fa-hard-hat"></i> Civil Engineering</h3>
+                    <span class="dept-tag">Department of Civil Engineering</span>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Structural Engineering</li>
+                        <li><i class="fas fa-caret-right"></i> Hydraulics & Water Management</li>
+                        <li><i class="fas fa-caret-right"></i> Geotechnical Engineering</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card">
+                    <h3><i class="fas fa-bolt"></i> Electrical Systems Engineering</h3>
+                    <span class="dept-tag">Department of Electrical Systems Engineering</span>
+                    <ul>
+                        <li><i class="fas fa-caret-right"></i> Automatic</li>
+                        <li><i class="fas fa-caret-right"></i> Telecommunication</li>
+                        <li><i class="fas fa-caret-right"></i> Electronics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="lmd-section">
+            <h2><i class="fas fa-award"></i> Postgraduate Programs (Master)</h2>
+            <div class="program-cards-grid">
+                
+                <div class="program-card" style="border-left-color: #5aa1a9;">
+                    <h3><i class="fas fa-scroll" style="color: #5aa1a9;"></i> Master in Process Control</h3>
+                    <span class="dept-tag">Process Engineering</span>
+                    <p style="margin-top: 10px;">Focus on advanced instrumentation and control strategies for complex industrial systems.</p>
+                </div>
+                
+                <div class="program-card" style="border-left-color: #f7a049;">
+                    <h3><i class="fas fa-scroll" style="color: #f7a049;"></i> Master in Renewable Energy Systems</h3>
+                    <span class="dept-tag">Mechanical & Electrical Systems</span>
+                    <p style="margin-top: 10px;">Interdisciplinary program covering the design and integration of solar, wind, and geothermal technologies.</p>
+                </div>
+                
+                <div class="program-card" style="border-left-color: #008cba;">
+                    <h3><i class="fas fa-scroll" style="color: #008cba;"></i> Master in Structural Dynamics</h3>
+                    <span class="dept-tag">Civil Engineering</span>
+                    <p style="margin-top: 10px;">Advanced study of structural behavior under dynamic loads, including earthquake and wind engineering.</p>
+                </div>
+                
+                <div class="program-card" style="border-left-color: #00a0e3;">
+                    <h3><i class="fas fa-scroll" style="color: #00a0e3;"></i> Master in Networks & Telecommunications</h3>
+                    <span class="dept-tag">Electrical Systems Engineering</span>
+                    <p style="margin-top: 10px;">Focused on signal processing, network architecture, and wireless communication technologies.</p>
+                </div>
+                
+                <div style="grid-column: 1 / -1; margin-top: 20px; text-align: center;">
+                    <a href="#" class="btn-primary" style="width: auto;"><i class="fas fa-file-download"></i> Download Full Master Programs List (PDF)</a>
+                </div>
                 
             </div>
-            
-            <aside class="sidebar-menu">
-                <h3>Explore the Faculty</h3>
-                <ul>
-                    <li><a href="MissionAndVision.html"><i class="fas fa-bullseye"></i> Mission & Vision</a></li>
-                    <li><a href="Deanswelcome.html"><i class="fas fa-user-tie"></i> Dean's Welcome</a></li>
-                    <li><a href="FacultyPresentationChart.html"><i class="fas fa-chart-bar"></i> Faculty Presentation Chart</a></li>
-                    <li><a href="Programs.html" class="active"><i class="fas fa-book"></i> Our Programs of Study</a></li>
-                    </ul>
-            </aside>
-            
+        </section>
+
+        <section class="lmd-section">
+            <h2><i class="fas fa-search"></i> Doctoral Programs (PhD - LMD)</h2>
+            <div class="doctorate-card">
+                <h2>Excellence in Engineering Research</h2>
+                <p>The Faculty offers Doctoral (PhD) programs across all its engineering disciplines. These programs are designed for highly motivated candidates seeking to contribute original research to their field under the guidance of our distinguished research professors.</p>
+                
+                <p>Admission is highly competitive and linked to active research projects (PRFU and CNEPRU). Prospective candidates must review current thesis topics and application deadlines via the institutional research portal.</p>
+                
+                <a href="../about/DoctorateApplicationForm.html" class="btn-secondary" style="background: white; color: var(--primary); border: none; margin-top: 15px;">
+                  <i class="fas fa-user-graduate"></i> Consult Doctoral Offer & Applications
+                </a>
+            </div>
         </section>
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -183,5 +314,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

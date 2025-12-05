@@ -3,23 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>All Official Online Platforms | Faculty of Technology</title>
+    <title>All Online Platforms | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour les Plateformes */
+        .platforms-hero {
+            /* Image de fond avec une touche technologique/numérique */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/platforms-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .platforms-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .platforms-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Conteneur principal des Plateformes */
+        .platforms-container {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+        }
+        .platforms-container h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        /* Grille des Plateformes */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        /* Carte de chaque plateforme */
+        .platform-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--secondary);
+        }
+        .platform-card i {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--secondary);
+        }
+        .platform-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .platform-card p {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .platform-card .btn-access {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--accent);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .platform-card .btn-access:hover {
+            background: var(--primary);
+        }
+        
+        /* Styles spécifiques aux icônes de plateforme */
+        .google-meet i { color: #00796b; } /* Teal */
+        .facebook i { color: #0426e9; }   /* Red */
+        .ent i { color: #f7a049; }       /* Orange */
+        .email i { color: #dd6434; }     /* Dark Red/Gmail */
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +121,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,7 +130,6 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -48,159 +138,105 @@
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="AtHomeLearning.html" class="nav-link active">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="Elearning.html">E-learning</a></li>
-                        <li><a href="AllPlatformsOnline.html" class="active">Online Platforms</a></li>
+                        <li><a href="AllPlatformsOnline.html" class="active-dropdown">Online Platforms</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="platforms-hero">
+        <div class="container">
+            <h1>Essential Online Tools & Platforms</h1>
+            <p>Your directory for official communication, video conferencing, and resource repositories.</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>🔗 All Official Online Platforms</h1>
-            <p>Your directory for essential university and faculty digital services for both academic and administrative needs.</p>
-        </section>
-
-        <section class="section container content-grid">
+    <main class="container">
+        
+        <div class="platforms-container">
+            <h2><i class="fas fa-link" style="color: var(--secondary);"></i> Key Digital Resources for Students</h2>
             
-            <div class="main-content-area">
-                
-                <h2>Central Academic Platforms</h2>
-                
-                <p>These platforms are crucial for your daily academic life, managing course content, personal files, and grades.</p>
+            <p style="margin-bottom: 30px;">
+                In addition to the main E-learning platform, the faculty utilizes several essential online services to facilitate communication, live instruction, and information distribution.
+            </p>
 
-                <div class="platform-link-list">
-                    
-                    <div class="platform-item">
-                        <div class="platform-icon"><i class="fas fa-user-circle"></i></div>
-                        <div class="platform-details">
-                            <h3>ENT (Espace Numérique de Travail)</h3>
-                            <p>Your primary digital workspace for administrative documents, re-registration, and personal grades visualization.</p>
-                        </div>
-                        <a href="https://ent.univ-boumerdes.dz/" target="_blank" class="btn btn-secondary">Go to ENT <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-
-                    <div class="platform-item">
-                        <div class="platform-icon"><i class="fas fa-desktop"></i></div>
-                        <div class="platform-details">
-                            <h3>E-learning (Moodle)</h3>
-                            <p>Access to all lecture materials, assignments, forums, and online exams specific to your modules.</p>
-                        </div>
-                        <a href="Elearning.html" class="btn btn-secondary">Go to E-learning <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    
-                    <div class="platform-item">
-                        <div class="platform-icon"><i class="fas fa-book"></i></div>
-                        <div class="platform-details">
-                            <h3>UMBB Digital Library</h3>
-                            <p>Central access point for Périodicals, Scientific Databases (e.g., ScienceDirect), and digital theses.</p>
-                        </div>
-                        <a href="../library/library.html" class="btn btn-secondary">Go to Library <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="platform-grid">
+                
+                <div class="platform-card google-meet">
+                    <i class="fas fa-video"></i>
+                    <h3>Online Meetings (Visioconférence)</h3>
+                    <p>Tool used by faculty members for live online lectures, tutoring sessions (TD), and group meetings (e.g., using **Google Meet** or **Zoom**).</p>
+                    <a href="https://meet.google.com/" target="_blank" class="btn-access"><i class="fas fa-external-link-alt"></i> Access Google Meet</a>
                 </div>
 
-                <h2 style="margin-top: 40px;">Administrative & Research Resources</h2>
-                <p>Links to resources supporting your administrative tasks and potential research activities:</p>
-                
-                <div class="platform-link-list">
-
-                    <div class="platform-item">
-                        <div class="platform-icon"><i class="fas fa-gavel"></i></div>
-                        <div class="platform-details">
-                            <h3>Academic Regulations</h3>
-                            <p>The official collection of LMD system regulations, evaluation rules, and internal procedures.</p>
-                        </div>
-                        <a href="schooling.html" class="btn btn-secondary">View Regulations <i class="fas fa-file-alt"></i></a>
-                    </div>
-                    
-                    <div class="platform-item">
-                        <div class="platform-icon"><i class="fas fa-flask"></i></div>
-                        <div class="platform-details">
-                            <h3>University Research Portal</h3>
-                            <p>Information on faculty research labs, projects, and PhD thesis submission guidelines.</p>
-                        </div>
-                        <a href="#" target="_blank" class="btn btn-secondary">Go to Research Portal <i class="fas fa-external-link-alt"></i></a>
-                    </div>
+                <div class="platform-card ent">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>Official ENT (Digital Workspace)</h3>
+                    <p>The main portal for administrative services, grade consultation, personal data updates, and official university announcements.</p>
+                    <a href="https://ent.univ-boumerdes.dz/" target="_blank" class="btn-access"><i class="fas fa-external-link-alt"></i> Access ENT</a>
                 </div>
 
-                <div class="alert-box-info" style="margin-top: 40px;">
-                    <h4>🔑 Login Information</h4>
-                    <p>Your single university login (ENT) is generally used for all platforms listed above, except where otherwise noted.</p>
+                <div class="platform-card facebook">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Faculty Facebook Page</h3>
+                    <p>Repository for recorded lectures, practical demonstration videos (TP), academic events, and student project showcases.</p>
+                    <a href="https://www.facebook.com/UMBB.FT.officiel" target="_blank" class="btn-access"><i class="fas fa-external-link-alt"></i> Visit Channel (Placeholder)</a>
                 </div>
                 
+                 <div class="platform-card email">
+                    <i class="fas fa-envelope-square"></i>
+                    <h3>Institutional Email (@univ-boumerdes.dz)</h3>
+                    <p>Your official communication channel. It's mandatory to check this address daily for administrative and pedagogical notices.</p>
+                    <a href="https://mail.google.com/a/univ-boumerdes.dz" target="_blank" class="btn-access"><i class="fas fa-external-link-alt"></i> Access Mail</a>
+                </div>
+
             </div>
             
-            <aside class="sidebar-menu">
-                <h3>Online Resources</h3>
-                <ul>
-                    <li><a href="Elearning.html"><i class="fas fa-desktop"></i> E-learning Platform</a></li>
-                    <li><a href="AllPlatformsOnline.html" class="active"><i class="fas fa-globe"></i> **Online Platforms**</a></li>
-                    <li><hr></li>
-                    <li><a href="AtHomeLearning.html"><i class="fas fa-laptop-house"></i> Distance Education Home</a></li>
-                </ul>
-                <div class="sidebar-contact-box">
-                    <h4>Direct Access</h4>
-                    <p>Log in directly to your personalized space:</p>
-                    <a href="../student_portal/login.html" class="btn btn-primary-small">Student Portal</a>
-                </div>
-            </aside>
+            <div class="important-note" style="margin-top: 40px; background: #e6f7ff; border-left: 5px solid var(--primary); color: var(--primary);">
+                <i class="fas fa-lock"></i> **Data Security:** Always use your official credentials and log out of all platforms after use, especially on public computers.
+            </div>
             
-        </section>
+        </div>
+        
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -209,5 +245,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

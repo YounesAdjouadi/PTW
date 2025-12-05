@@ -3,23 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Schooling and Academic Life | Faculty of Technology</title>
+    <title>Schooling & Pedagogy | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour la Scolarité */
+        .schooling-hero {
+            /* Image de fond académique avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/schooling-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .schooling-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .schooling-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Grille des liens principaux */
+        .schooling-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 30px 0;
+        }
+
+        /* Style des cartes de lien (cohérent avec les cartes de la page d'accueil) */
+        .link-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            border-top: 5px solid var(--accent);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none; /* Rendre la carte cliquable */
+            color: var(--text-dark);
+            text-align: center;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 45, 98, 0.15);
+            border-top-color: var(--secondary);
+        }
+        .link-card i {
+            font-size: 3em;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .link-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .link-card p {
+            font-size: 1em;
+            color: var(--text-light);
+        }
+        
+        /* Section d'information supplémentaire */
+        .pedagogy-info {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--secondary);
+        }
+        .pedagogy-info h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .pedagogy-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .pedagogy-info ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+        .pedagogy-info ul li:last-child {
+            border-bottom: none;
+        }
+        .pedagogy-info ul li i {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +126,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,144 +135,106 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="schooling.html" class="nav-link active">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="StudySchedule.html">Study Schedule</a></li>
                         <li><a href="TimeTable.html">Time Table</a></li>
                         <li><a href="ScheduleOfExams.html">Exams Schedule</a></li>
-                        </ul>
+                    </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="schooling-hero">
+        <div class="container">
+            <h1>Schooling & Student Services</h1>
+            <p>Your essential guide to academic organization, schedules, and important dates.</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>📅 Academic Management and Schooling</h1>
-            <p>Your resource center for academic calendars, regulations, schedules, and important dates.</p>
-        </section>
-
-        <section class="section container content-grid">
+    <main class="container">
+        
+        <div class="schooling-links-grid">
             
-            <div class="main-content-area">
-                
-                <h2>Important Academic Resources</h2>
-                
-                <p>The schooling service (Vice-Dean's office for Pedagogy) ensures the smooth operation of the academic year, managing student records, registration, class organization, and examination processes.</p>
+            <a href="StudySchedule.html" class="link-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Study Schedule (Calendrier Universitaire)</h3>
+                <p>Consult the key academic dates: semester start/end, holidays, and registration periods.</p>
+            </a>
 
-                <div class="academic-links-grid">
-                    
-                    <a href="StudySchedule.html" class="academic-card">
-                        <i class="fas fa-book-open"></i>
-                        <h3>Study Schedule</h3>
-                        <p>View the annual and semester breakdown of all lectures, practical sessions, and holidays.</p>
-                    </a>
-
-                    <a href="TimeTable.html" class="academic-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Time Table (Class Schedule)</h3>
-                        <p>Access the detailed weekly schedule by department, level, and group.</p>
-                    </a>
-
-                    <a href="ScheduleOfExams.html" class="academic-card">
-                        <i class="fas fa-clipboard-list"></i>
-                        <h3>Exams Schedule</h3>
-                        <p>Find the official calendar for mid-terms (Contrôle Continu) and final examinations (Session Normale & Rattrapage).</p>
-                    </a>
-
-                    <a href="../student_portal/login.html" class="academic-card">
-                        <i class="fas fa-user-check"></i>
-                        <h3>Student Portal</h3>
-                        <p>Access your personal results, manage your enrollment, and download official documents.</p>
-                    </a>
-                    
-                </div>
-                
-                <h2 style="margin-top: 40px;">Academic Regulations</h2>
-                <p>All students are required to adhere to the university's academic and disciplinary regulations. Key documents include:</p>
-                <ul>
-                    <li>**The LMD Evaluation System:** Details on continuous assessment, weighting of modules, and compensation rules.</li>
-                    <li>**Internal Rules of the Faculty:** Behavioral guidelines and access rules for laboratories and libraries.</li>
-                    <li>**Registration and Re-registration Procedures:** Annual requirements for maintaining student status.</li>
-                </ul>
-
-                <a href="../contact/contact.html" class="btn btn-primary" style="margin-top: 20px;">Contact the Schooling Administration <i class="fas fa-envelope"></i></a>
-                
-            </div>
+            <a href="TimeTable.html" class="link-card">
+                <i class="fas fa-clock"></i>
+                <h3>Course Timetables (Emplois du Temps)</h3>
+                <p>Access the detailed weekly schedules for all levels (LMD) and specialized groups.</p>
+            </a>
             
-            <aside class="sidebar-menu">
-                <h3>Schooling Links</h3>
-                <ul>
-                    <li><a href="StudySchedule.html"><i class="fas fa-book-open"></i> Study Schedule</a></li>
-                    <li><a href="TimeTable.html"><i class="fas fa-clock"></i> Time Table</a></li>
-                    <li><a href="ScheduleOfExams.html"><i class="fas fa-clipboard-list"></i> Exams Schedule</a></li>
-                    <li><hr></li>
-                    <li><a href="../student_portal/login.html"><i class="fas fa-user-graduate"></i> Student Portal Login</a></li>
-                </ul>
-            </aside>
+            <a href="ScheduleOfExams.html" class="link-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Exam Schedules</h3>
+                <p>Find the official dates and locations for continuous assessments and final exams (Session 1 & 2).</p>
+            </a>
             
-        </section>
+            <a href="#" class="link-card" style="border-top-color: var(--secondary);">
+                <i class="fas fa-gavel"></i>
+                <h3>Pedagogical Regulations</h3>
+                <p>Consult the official rules governing studies, grading, and student rights at the Faculty.</p>
+            </a>
+            
+        </div>
+        
+        <div class="pedagogy-info">
+            <h2><i class="fas fa-info-circle" style="color: var(--secondary);"></i> Important Student Information</h2>
+            <p>The Vice Dean's Office for Pedagogy ensures the smooth running of all academic activities. Key services include:</p>
+            <ul>
+                <li><i class="fas fa-user-check"></i> **Enrollment Services:** Managing annual re-enrollment and student file updates.</li>
+                <li><i class="fas fa-stream"></i> **Course Organization:** Allocation of lecture halls, labs, and planning of practical sessions (TD/TP).</li>
+                <li><i class="fas fa-envelope-open-text"></i> **Official Announcements:** Publishing official notices regarding academic closures or schedule modifications.</li>
+                <li><i class="fas fa-map-marker-alt"></i> **Location:** Administrative block, 1st floor, Office of the Vice Dean.</li>
+            </ul>
+        </div>
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -185,5 +243,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

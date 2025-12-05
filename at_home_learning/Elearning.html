@@ -3,23 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E-learning Platform (Moodle) | Faculty of Technology</title>
+    <title>E-learning Platform | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique pour l'E-learning */
+            .e-learning-hero {
+                /* Image de fond avec une touche technologique/numérique */
+                background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/e-learning-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .e-learning-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .e-learning-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Section d'accès rapide */
+        .access-section {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+        .access-section h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Liens d'accès spécifiques */
+        .access-buttons a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .access-buttons a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-moodle {
+            background-color: #f7a049; /* Orange pour Moodle */
+            color: white;
+        }
+        .btn-guide {
+            background-color: #5aa1a9; /* Bleu clair/Cyan */
+            color: white;
+        }
+
+        /* Section Tutoriels/Aide */
+        .help-section {
+            margin-top: 40px;
+        }
+        .help-section h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .tutorial-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: border-left 0.3s;
+            border-left: 5px solid var(--bg-light);
+        }
+        .tutorial-item:hover {
+            border-left: 5px solid var(--secondary);
+        }
+        .tutorial-item i {
+            font-size: 1.5em;
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        .tutorial-item h4 {
+            display: inline;
+            color: var(--text-dark);
+            font-size: 1.1em;
+        }
+        .tutorial-item p {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +131,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,7 +140,6 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../schooling/schooling.html" class="nav-link">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -48,125 +148,101 @@
                         <li><a href="../schooling/ScheduleOfExams.html">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="AtHomeLearning.html" class="nav-link active">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="Elearning.html" class="active">E-learning</a></li>
+                        <li><a href="Elearning.html" class="active-dropdown">E-learning</a></li>
                         <li><a href="AllPlatformsOnline.html">Online Platforms</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="e-learning-hero">
+        <div class="container">
+            <h1>Our Official E-learning Platform</h1>
+            <p>Access your course content (Lectures, TD, TP), quizzes, and collaborative spaces via Moodle.</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>💻 E-learning Platform Access</h1>
-            <p>Your central hub for course materials, virtual classrooms, and interactive learning activities.</p>
-        </section>
-
-        <section class="section container content-grid">
-            
-            <div class="main-content-area">
-                
-                <h2>What is the E-learning Platform?</h2>
-                
-                <p>Our E-learning platform (powered by **Moodle**) provides students and faculty with a robust, centralized environment for digital learning. It complements face-to-face instruction and facilitates **distance education**.</p>
-
-                <p>You can access resources for every module in which you are enrolled, including:</p>
-                <ul>
-                    <li>**Lecture Notes (Cours):** Downloadable PDFs and presentations.</li>
-                    <li>**Tutorials (TD) and Practical (TP) Documents:** Exercise sheets and lab instructions.</li>
-                    <li>**Quizzes and Assignments:** Online submissions and automated testing.</li>
-                    <li>**Forums and Communication:** Direct communication channels with professors and classmates.</li>
-                </ul>
-
-                <div class="access-box">
-                    <h3>🚀 Direct Access to the E-learning Platform</h3>
-                    <p>Use your official university credentials (ENT login) to access the platform.</p>
-                    <a href="http://e-learning.univ-boumerdes.dz/ft" target="_blank" class="btn btn-primary btn-large">
-                        <i class="fas fa-arrow-alt-circle-right"></i> Log in to E-learning
-                    </a>
-                    <p class="small-text" style="margin-top: 10px;">**Important:** The platform is accessible 24/7. Use a modern web browser for optimal performance.</p>
-                </div>
-
-                <h2 style="margin-top: 40px;">Getting Started Guide</h2>
-                <ol>
-                    <li>**Log In:** Enter your ENT username and password.</li>
-                    <li>**Find Your Course:** Use the search bar or navigate by department (Civil, Mechanical, etc.).</li>
-                    <li>**Enroll:** Some courses require a manual enrollment key, usually provided by your professor.</li>
-                    <li>**Start Learning:** Download materials, participate in forums, and check the calendar for deadlines.</li>
-                </ol>
-                
+    <main class="container">
+        
+        <section class="access-section">
+            <h2><i class="fas fa-sign-in-alt"></i> Access the Platform</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1em;">
+                Use your official student login credentials (Matricule) to connect to your virtual classrooms.
+            </p>
+            <div class="access-buttons">
+                <a href="http://moodle.univ-boumerdes.dz/ft/" target="_blank" class="btn-moodle">
+                    <i class="fas fa-graduation-cap"></i> Access Moodle Platform
+                </a>
+                <a href="../assets/docs/Moodle_Guide_Etudiant.pdf" target="_blank" class="btn-guide">
+                    <i class="fas fa-book-open"></i> Download Student Guide (PDF)
+                </a>
             </div>
-            
-            <aside class="sidebar-menu">
-                <h3>Online Resources</h3>
-                <ul>
-                    <li><a href="Elearning.html" class="active"><i class="fas fa-desktop"></i> **E-learning Platform**</a></li>
-                    <li><a href="AllPlatformsOnline.html"><i class="fas fa-globe"></i> Online Platforms</a></li>
-                    <li><hr></li>
-                    <li><a href="AtHomeLearning.html"><i class="fas fa-laptop-house"></i> Distance Education Home</a></li>
-                </ul>
-                <div class="sidebar-contact-box">
-                    <h4>Need Help with Moodle?</h4>
-                    <p>If you encounter technical issues or cannot access your modules, please contact the dedicated support team.</p>
-                    <a href="../contact/contact.html" class="btn btn-primary-small">Contact Tech Support</a>
-                </div>
-            </aside>
-            
         </section>
+
+        <section class="help-section">
+            <h3><i class="fas fa-headset"></i> Quick Start & Help Center</h3>
+            <div class="tutorial-grid">
+                
+                <div class="tutorial-item">
+                    <h4><i class="fas fa-user-lock"></i> Lost Password or Login Issue</h4>
+                    <p>Instructions on how to reset your password or contact IT support if you are unable to log in.</p>
+                    <a href="#" style="color: var(--secondary); font-weight: 500; font-size: 0.9em; text-decoration: none;">View Procedure <i class="fas fa-chevron-right"></i></a>
+                </div>
+
+                <div class="tutorial-item">
+                    <h4><i class="fas fa-chalkboard-teacher"></i> How to Enroll in a Course?</h4>
+                    <p>Step-by-step guide on how to use the course key provided by your professor to enroll in your modules.</p>
+                    <a href="https://www.youtube.com/watch?v=4vmmtuPn5tI" target="_blank" style="color: var(--secondary); font-weight: 500; font-size: 0.9em; text-decoration: none;">Watch Video Tutorial <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="tutorial-item">
+                    <h4><i class="fas fa-upload"></i> Submitting Assignments (TD/TP)</h4>
+                    <p>Details on file formats, deadlines, and the procedure for submitting your work on the platform.</p>
+                    <a href="#" style="color: var(--secondary); font-weight: 500; font-size: 0.9em; text-decoration: none;">Read Guidelines <i class="fas fa-chevron-right"></i></a>
+                </div>
+<br>
+<br>
+            </div>
+        </section>
+
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -175,5 +251,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>

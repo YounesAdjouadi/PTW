@@ -3,23 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Study Schedule (Academic Calendar) | Faculty of Technology</title>
+    <title>Course Timetables | Faculty of Technology</title>
+    <link rel="icon" type="image/png" href="/SITE22/assets/img/logo-ft.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero Section spécifique (style cohérent) */
+        .timetable-hero {
+            /* Image de fond académique avec overlay bleu foncé */
+            background: linear-gradient(rgba(7, 35, 118, 0.85), rgba(2, 60, 126, 0.7)), url('../assets/img/timetable-bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .timetable-hero h1 { 
+            color: white; 
+            font-size: 3rem; 
+            margin-bottom: 10px; 
+            font-weight: 700;
+        }
+        .timetable-hero p { 
+            font-size: 1.2rem; 
+            opacity: 0.9;
+        }
+
+        /* Conteneur principal des EDT */
+        .timetable-container {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+        }
+        .timetable-container h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+        }
+        .timetable-container h4 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-top: 30px;
+            border-left: 5px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        /* Grille des départements (pour la 1ère grande section) */
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        /* Bloc de chaque département */
+        .department-block {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        .department-block h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Style des listes des emplois du temps */
+        .timetable-list {
+            list-style: none;
+            padding: 0;
+        }
+        .timetable-list li {
+            margin-bottom: 8px;
+        }
+        .timetable-list li a {
+            display: block;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            transition: background 0.2s;
+            font-size: 0.9em;
+        }
+        .timetable-list li a:hover {
+            background: #e0f2ff;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        .timetable-list li a i {
+            margin-right: 8px;
+            color: #d9534f; /* Couleur rouge pour le PDF */
+        }
+
+        /* Section d'alerte */
+        .alert-box {
+            background: #fff3cd; 
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ffeeba;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        .alert-box i {
+            margin-right: 10px;
+        }
+        
+        /* Style pour les sections spéciales */
+        .special-section {
+            background: #f7f7f7;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .special-section h4 {
+            border-left-color: #5cb85c; /* Vert pour les spécialités */
+            color: #5cb85c;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo" aria-label="Faculty of Technology Home">
-                <i class="fas fa-university" aria-hidden="true"></i> Faculty of <span class="highlight">Technology</span>
+            <a href="../index.html" class="logo">
+                <img src="../assets/img/logo-ft.png" alt="Logo" class="logo-img" style="height: 40px; margin-right: 10px;">
+                Faculty of <span class="highlight">Technology</span>
             </a>
-            
             <button class="menu-toggle" aria-expanded="false"><span class="hamburger"></span></button>
-
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-
                 <li class="dropdown">
                     <a href="../about/about.html" class="nav-link">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -29,7 +154,6 @@
                         <li><a href="../about/Programs.html">Programs</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../departments/departments.html" class="nav-link">Departments <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
@@ -39,182 +163,148 @@
                         <li><a href="../departments/CivilEngineeringDepartement.html">Civil Engineering</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="schooling.html" class="nav-link active">Schooling <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="StudySchedule.html" class="active">Study Schedule</a></li>
-                        <li><a href="TimeTable.html">Time Table</a></li>
+                        <li><a href="StudySchedule.html">Study Schedule</a></li>
+                        <li><a href="TimeTable.html" class="active-dropdown">Time Table</a></li>
                         <li><a href="ScheduleOfExams.html">Exams Schedule</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown">
                     <a href="../at_home_learning/AtHomeLearning.html" class="nav-link">At Home Learning <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="../at_home_learning/Elearning.html">E-learning</a></li>
                         <li><a href="../at_home_learning/AllPlatformsOnline.html">Online Platforms</a></li>
-                        <li><a href="../at_home_learning/AtHomeLearning.html">Distance Education</a></li>
                     </ul>
                 </li>
-
                 <li><a href="../library/library.html" class="nav-link">Library</a></li>
                 <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-
-                <li>
-                    <a href="../student_portal/login.html" class="nav-link btn-primary">
-                        <i class="fas fa-user-graduate"></i> Student Portal
-                    </a>
-                </li>
+                <li><a href="../student_portal/login.html" class="nav-link btn-primary"><i class="fas fa-user-graduate"></i> Student Portal</a></li>
             </ul>
         </div>
     </nav>
 
+    <header class="timetable-hero">
+        <div class="container">
+            <h1>Course Timetables (Emplois du Temps)</h1>
+            <p>The schedule for odd semesters - University year 2025/2026</p>
+        </div>
+    </header>
 
-    <main id="main-content">
-
-        <section class="page-header container">
-            <h1>🗓️ Academic Study Schedule (Annual Calendar)</h1>
-            <p>View the official structure of the academic year, including semester start/end dates, holidays, and registration periods.</p>
-        </section>
-
-        <section class="section container content-grid">
+    <main class="container">
+        
+        <div class="timetable-container">
+            <h2><i class="fas fa-table" style="color: var(--secondary);"></i> Semester 1 Schedule</h2>
             
-            <div class="main-content-area">
-                
-                <h2>Structure of the Academic Year 2024/2025</h2>
-                
-                <p>The academic year is divided into two main semesters (Fall and Spring), followed by examination sessions and a Summer break.</p>
+            <div class="alert-box">
+                <i class="fas fa-exclamation-triangle"></i> **ATTENTION:** Always check the date on the PDF, as schedules may be updated due to unforeseen circumstances.
+            </div>
 
-                <div class="calendar-table-container">
-                    <table class="academic-calendar-table">
-                        <thead>
-                            <tr>
-                                <th>Period</th>
-                                <th>Activity</th>
-                                <th>Key Dates (Example)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="semester-start">
-                                <td>**Semester 1 (Fall)**</td>
-                                <td>Start of Lectures/TD/TP</td>
-                                <td>September 8, 2024</td>
-                            </tr>
-                            <tr>
-                                <td>Semester 1</td>
-                                <td>Mid-term Assessments (CC)</td>
-                                <td>End of October 2024</td>
-                            </tr>
-                            <tr class="semester-end">
-                                <td>Semester 1</td>
-                                <td>End of Lectures</td>
-                                <td>December 19, 2024</td>
-                            </tr>
-                            <tr class="exams-session">
-                                <td>Session 1 (Exams)</td>
-                                <td>Semester 1 Final Examinations</td>
-                                <td>January 5 - January 16, 2025</td>
-                            </tr>
-                            <tr class="holidays">
-                                <td>Winter Break</td>
-                                <td>Official University Holiday</td>
-                                <td>January 17 - January 26, 2025</td>
-                            </tr>
-                            <tr class="semester-start">
-                                <td>**Semester 2 (Spring)**</td>
-                                <td>Start of Lectures/TD/TP</td>
-                                <td>January 27, 2025</td>
-                            </tr>
-                            <tr>
-                                <td>Semester 2</td>
-                                <td>Mid-term Assessments (CC)</td>
-                                <td>End of March 2025</td>
-                            </tr>
-                            <tr class="semester-end">
-                                <td>Semester 2</td>
-                                <td>End of Lectures</td>
-                                <td>May 15, 2025</td>
-                            </tr>
-                            <tr class="exams-session">
-                                <td>Session 1 (Exams)</td>
-                                <td>Semester 2 Final Examinations</td>
-                                <td>May 25 - June 5, 2025</td>
-                            </tr>
-                            <tr class="rattrapage">
-                                <td>Rattrapage Session</td>
-                                <td>Catch-up Examinations (All Semesters)</td>
-                                <td>June 22 - July 3, 2025</td>
-                            </tr>
-                            <tr class="holidays">
-                                <td>Summer Break</td>
-                                <td>Official University Holiday</td>
-                                <td>July 4 - September 7, 2025</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="department-grid">
+                
+                <div class="department-block">
+                    <h3>CIVIL ENGINEERING DEPARTMENT</h3>
+                    <ul class="timetable-list">
+                        <li><a href="../assets/docs/TimeTable_GC_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GC_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GC_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GC_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Timetable</a></li>
+                    </ul>
                 </div>
 
-                <div class="alert-box-warning" style="margin-top: 40px;">
-                    <h4>🔔 Important Note on Administrative Dates</h4>
-                    <p>Dates for administrative tasks (re-registration, appeals, final grades posting) are managed by the Central Administration. Please check the **Official University Calendar** for precise administrative deadlines.</p>
+                <div class="department-block">
+                    <h3>PROCESS ENGINEERING DEPARTMENT</h3>
+                    <ul class="timetable-list">
+                        <li><a href="../assets/docs/TimeTable_GP_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GP_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GP_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GP_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Timetable</a></li>
+                    </ul>
                 </div>
 
-                <a href="ScheduleOfExams.html" class="btn btn-secondary" style="margin-top: 20px;">View Detailed Exams Schedule <i class="fas fa-clipboard-list"></i></a>
-                
+                <div class="department-block">
+                    <h3>MECHANICAL ENGINEERING DEPARTMENT</h3>
+                    <ul class="timetable-list">
+                        <li><a href="../assets/docs/TimeTable_GM_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GM_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GM_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GM_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Timetable</a></li>
+                    </ul>
+                </div>
+
+                <div class="department-block">
+                    <h3>ELECTRICAL SYSTEMS ENGINEERING DEPARTMENT</h3>
+                    <ul class="timetable-list">
+                        <li><a href="../assets/docs/TimeTable_GE_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GE_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GE_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Timetable</a></li>
+                        <li><a href="../assets/docs/TimeTable_GE_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Timetable</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="special-section">
+                <h4>Timetable - Engineering Speciality</h4>
+                <div class="department-grid">
+                    
+                    <div class="department-block" style="border-left-color: #5cb85c;">
+                        <h3>Engineering Levels</h3>
+                        <ul class="timetable-list">
+                            <li><a href="../assets/docs/TimeTable_Ing_Y1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 1st year of university</a></li>
+                            <li><a href="../assets/docs/TimeTable_Ing_Y2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 2nd year of university</a></li>
+                            <li><a href="../assets/docs/TimeTable_Ing_Y3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 3rd year of university</a></li>
+                            <li><a href="../assets/docs/TimeTable_Ing_Y4_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 4th year of university</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="department-block" style="border-left-color: #5cb85c;">
+                        <h3>MCIL Speciality</h3>
+                        <ul class="timetable-list">
+                            <li><a href="../assets/docs/TimeTable_MCIL_L1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L1 Timetable</a></li>
+                            <li><a href="../assets/docs/TimeTable_MCIL_L2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L2 Timetable</a></li>
+                            <li><a href="../assets/docs/TimeTable_MCIL_L3_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> L3 Timetable</a></li>
+                            <li><a href="../assets/docs/TimeTable_MCIL_M1_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M1 Timetable</a></li>
+                            <li><a href="../assets/docs/TimeTable_MCIL_M2_S1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> M2 Timetable</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <aside class="sidebar-menu">
-                <h3>Schooling Links</h3>
-                <ul>
-                    <li><a href="StudySchedule.html" class="active"><i class="fas fa-book-open"></i> **Study Schedule**</a></li>
-                    <li><a href="TimeTable.html"><i class="fas fa-clock"></i> Time Table</a></li>
-                    <li><a href="ScheduleOfExams.html"><i class="fas fa-clipboard-list"></i> Exams Schedule</a></li>
-                    <li><hr></li>
-                    <li><a href="schooling.html"><i class="fas fa-graduation-cap"></i> Schooling Home</a></li>
-                </ul>
-            </aside>
-            
-        </section>
+        </div>
+        
 
     </main>
-
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="f-col">
-                    <h4>Faculty of Technology</h4>
+                    <a href="../index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="../assets/img/logo-ft.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+                        Faculty of <span class="highlight">Technology</span>
+                    </a>
                     <p>Cité Frantz Fanon, Boumerdes 35000, Algeria.</p>
                     <p><i class="fas fa-phone"></i> +213 (0) 24 94 14 99</p>
                     <p><i class="fas fa-envelope"></i> contactft@univ-boumerdes.dz</p>
                 </div>
-
                 <div class="f-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="https://ent.univ-boumerdes.dz/" target="_blank">Official ENT</a></li>
-                        <li><a href="../library/library.html">Library</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="https://fs.univ-boumerdes.dz/" target="_blank">Faculty of Science</a></li>
+                        <li><a href="https://fhc.univ-boumerdes.dz/" target="_blank">Faculty of Hydrocarbons and Chemistry</a></li>
+                        <li><a href="https://fsegc.univ-boumerdes.dz/" target="_blank">Faculty of Economics, Commercial and Management Sciences</a></li>
+                        <li><a href="http://fd.univ-boumerdes.dz/" target="_blank">Faculty of Law</a></li>
                     </ul>
                 </div>
-
                 <div class="f-col footer-map-col">
-                    <h4>Our Location</h4>
+                    <h4>Location</h4>
                     <div class="footer-map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" 
-                            width="100%" height="200"
-                            style="border:0; border-radius:4px;"
-                            loading="lazy"
-                            title="Map showing the location of the Faculty of Technology, Boumerdes">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3195.9682708304914!2d3.468755676239169!3d36.7624920677271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128d227f4d2222d1%3A0x7486e929b2827a51!2sFacult%C3%A9%20de%20Technologie%20-%20UMBB!5e0!3m2!1sfr!2sdz!4v1701389445980!5m2!1sfr!2sdz" width="100%" height="150" style="border:0;" loading="lazy"></iframe>
                     </div>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>© 2025 Faculty of Technology - UMBB. All rights reserved.</p>
             </div>
@@ -223,5 +313,4 @@
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
